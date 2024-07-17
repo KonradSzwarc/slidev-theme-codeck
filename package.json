@@ -23,13 +23,17 @@
     "build": "slidev build example.md",
     "dev": "slidev example.md",
     "export": "slidev export example.md",
-    "screenshot": "slidev export example.md --format png"
+    "screenshot": "slidev export example.md --format png",
+    "format": "prettier --write .",
+    "check": "tsc --noEmit"
   },
   "dependencies": {
     "@slidev/types": "^0.49.16"
   },
   "devDependencies": {
-    "@slidev/cli": "^0.49.16"
+    "@slidev/cli": "^0.49.16",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.3"
   },
   "slidev": {
     "colorSchema": "both",
