@@ -1,0 +1,15 @@
+html,
+html.dark {
+  & .shiki {
+    @apply bg-base;
+  }
+
+  & .slidev-monaco-container {
+    @apply bg-base;
+
+    & .monaco-editor {
+      --vscode-editor-background: rgb(var(--color-base));
+      --vscode-editorGutter-background: rgb(var(--color-base));
+    }
+  }
+}

@@ -31,19 +31,22 @@
     "@slidev/types": "^0.49.16"
   },
   "devDependencies": {
+    "@fontsource-variable/fira-code": "^5.0.18",
+    "@fontsource-variable/inter": "^5.0.19",
     "@slidev/cli": "^0.49.16",
     "prettier": "^3.3.3",
     "typescript": "^5.5.3"
   },
   "slidev": {
     "colorSchema": "both",
-    "aspectRatio": "16/9",
-    "canvasWidth": 980,
     "highlighter": "shiki",
     "defaults": {
+      "aspectRatio": "16/9",
+      "canvasWidth": 960,
       "fonts": {
-        "sans": "Inter",
-        "mono": "Fira Code"
+        "provider": "none",
+        "sans": "Inter Variable",
+        "mono": "Fira Code Variable"
       }
     }
   }

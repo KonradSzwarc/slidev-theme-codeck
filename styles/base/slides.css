@@ -1,0 +1,10 @@
+#slide-content {
+  @apply bg-base;
+}
+
+code,
+kbd,
+samp,
+pre {
+  @apply font-mono;
+}

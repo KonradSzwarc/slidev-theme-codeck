@@ -1,16 +1,11 @@
 ---
 theme: ./
+layout: intro
 ---
 
-# Slidev Theme Starter
+# Codeck Slidev Theme
 
-Presentation slides for developers
-
-<div class="pt-12">
-  <span @click="next" class="px-2 p-1 rounded cursor-pointer hover:bg-white hover:bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
-</div>
+Custom theme for creating code-related presentations
 
 ---
 
@@ -53,9 +48,24 @@ image: https://cover.sli.dev
 
 # Code
 
-Use code snippets and get the highlighting directly!
+Use code snippets and get the `highlighting` directly!
 
 ```ts
+interface User {
+  id: number
+  firstName: string
+  lastName: string
+  role: string
+}
+
+function updateUser(id: number, update: Partial<User>) {
+  const user = getUser(id)
+  const newUser = { ...user, ...update }
+  saveUser(id, newUser)
+}
+```
+
+```ts {monaco}
 interface User {
   id: number
   firstName: string

@@ -1,0 +1,11 @@
+.slidev-layout.intro {
+  @apply h-full flex flex-col justify-center items-center text-center pb-8;
+
+  h1 {
+    @apply text-6xl font-black leading-snug text-title;
+  }
+
+  h1 + p {
+    @apply mt-2 text-2xl text-subtext1;
+  }
+}
