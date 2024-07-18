@@ -1,5 +1,16 @@
+:root {
+  &.light {
+    --color-slide: color-mix(in srgb, rgb(var(--color-pane)) 40%, rgb(255, 255, 255));
+  }
+
+  &.dark {
+    --color-slide: color-mix(in srgb, rgb(var(--color-pane)) 70%, rgb(0, 0, 0));
+  }
+}
 #slide-content {
-  @apply bg-base;
+  background-color: var(--color-slide);
+
+  @apply text-body text-base;
 }
 
 code,

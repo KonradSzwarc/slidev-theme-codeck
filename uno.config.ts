@@ -67,7 +67,7 @@ function getColorKeys() {
     'surface2',
     'surface1',
     'surface0',
-    'base',
+    'pane',
     'mantle',
     'crust',
   ];
