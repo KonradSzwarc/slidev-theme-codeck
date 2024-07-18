@@ -11,7 +11,7 @@ Custom theme for creating code-related presentations
 layout: two-cols-header
 ---
 
-# Code display modes
+# Code Display Modes
 
 Slidev provides two ways of showing code in your presentations.
 
@@ -228,6 +228,40 @@ class Calculator {
 
 console.log(new Calculator(10).add(5).subtract(3).getValue());
 ```
+
+---
+
+# Rich Text
+
+When writing slides you can access many rich text features provided by Slidev.
+
+<div class="grid grid-cols-5 gap-8 mt-8">
+
+**bold text**
+
+*italic text*
+
+~~strikethrough~~
+
+~sub~script
+
+^super^script
+
+`monospace`
+
+==highlight==
+
+==custom highlight=={class="bg-blue"}
+
+++underline++
+
+++custom underline++{class="decoration-blue decoration-wavy decoration-2 underline-offset-2"}
+
+[link](https://example.com)
+
+![Image alt text](https://img.shields.io/badge/image-40a02b?style=for-the-badge){class="inline"}
+
+</div>
 
 ---
 

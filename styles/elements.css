@@ -5,6 +5,11 @@ pre {
   @apply font-mono;
 }
 
+pre,
+code {
+  @apply select-text;
+}
+
 h1 {
   @apply text-3xl font-black leading-snug text-title;
 }
@@ -15,4 +20,8 @@ h1 + p {
 
 a {
   @apply border-current border-b border-dashed hover:text-blue hover:border-solid;
+}
+
+mark {
+  @apply bg-yellow px-1 py-px rounded text-white dark:text-black;
 }

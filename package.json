@@ -28,7 +28,11 @@
     "check": "tsc --noEmit"
   },
   "dependencies": {
-    "@slidev/types": "^0.49.16"
+    "@slidev/types": "^0.49.16",
+    "markdown-it-ins": "^4.0.0",
+    "markdown-it-mark": "^4.0.0",
+    "markdown-it-sub": "^2.0.0",
+    "markdown-it-sup": "^2.0.0"
   },
   "devDependencies": {
     "@fontsource-variable/fira-code": "^5.0.18",
@@ -43,6 +47,7 @@
     "defaults": {
       "aspectRatio": "16/9",
       "canvasWidth": 960,
+      "mdc": true,
       "fonts": {
         "provider": "none",
         "sans": "Inter Variable",
