@@ -1,5 +1,5 @@
 .slidev-layout.intro {
-  @apply h-full flex flex-col justify-center items-center text-center pb-8;
+  @apply h-full flex flex-col justify-center items-center text-center;
 
   h1 {
     @apply text-6xl font-black leading-snug text-title;

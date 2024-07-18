@@ -1,15 +1,25 @@
-html,
-html.dark {
+:root {
+  --color-code-block: rgb(var(--color-pane));
+
   & .shiki {
-    @apply bg-base;
+    background-color: var(--color-code-block);
   }
 
   & .slidev-monaco-container {
-    @apply bg-base;
+    background-color: var(--color-code-block);
 
     & .monaco-editor {
-      --vscode-editor-background: rgb(var(--color-base));
-      --vscode-editorGutter-background: rgb(var(--color-base));
+      --vscode-editor-background: var(--color-code-block);
+      --vscode-editorGutter-background: var(--color-code-block);
+
+      @apply outline-none;
     }
   }
+}
+
+code,
+kbd,
+samp,
+pre {
+  @apply font-mono;
 }

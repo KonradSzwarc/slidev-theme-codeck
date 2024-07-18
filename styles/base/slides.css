@@ -7,15 +7,21 @@
     --color-slide: color-mix(in srgb, rgb(var(--color-pane)) 70%, rgb(0, 0, 0));
   }
 }
+
+h1 {
+  @apply text-3xl font-black leading-tight text-title;
+}
+
+h1 + p {
+  @apply mt-0.5 text-lg text-subtext1;
+}
+
 #slide-content {
   background-color: var(--color-slide);
 
   @apply text-body text-base;
 }
 
-code,
-kbd,
-samp,
-pre {
-  @apply font-mono;
+.slidev-layout {
+  @apply px-8 py-6;
 }

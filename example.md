@@ -8,6 +8,62 @@ layout: intro
 Custom theme for creating code-related presentations
 
 ---
+layout: two-cols-header
+---
+
+# Code display modes
+
+Slidev provides two ways of showing code in your presentations.
+
+::left::
+
+Static code blocks using [Shiki](https://shiki.matsu.io/)
+
+```ts
+enum LogLevel { Error, Warning, Info, Debug }
+
+/**
+ * Equivalent to: 
+ * 'Error' | 'Warning' | 'Info' | 'Debug'
+ */
+type LogLevelName = keyof typeof LogLevel;
+
+function print(key: LogLevelName, message: string) {
+  const importance = LogLevel[key];
+
+  if (importance >= LogLevel.Warning) {
+    console.log(`${key}:`, message);
+  }
+}
+
+print("Error", "This is a message");
+```
+
+::right::
+
+Interactive code blocks using [Monaco](https://microsoft.github.io/monaco-editor/)
+
+```ts {monaco}
+enum LogLevel { Error, Warning, Info, Debug }
+
+/**
+ * Equivalent to: 
+ * 'Error' | 'Warning' | 'Info' | 'Debug'
+ */
+type LogLevelName = keyof typeof LogLevel;
+
+function print(key: LogLevelName, message: string) {
+  const importance = LogLevel[key];
+
+  if (importance >= LogLevel.Warning) {
+    console.log(`${key}:`, message);
+  }
+}
+
+print("Error", "This is a message");
+```
+
+---
 
 # What is Slidev?
 
