@@ -1,8 +1,6 @@
 <template>
-  <div class="slidev-layout flex flex-col gap-4 w-full h-full">
-    <div class="mb-2">
-      <slot />
-    </div>
+  <div class="slidev-layout two-cols-header flex flex-col">
+    <slot />
     <div class="flex gap-4">
       <div class="w-full">
         <slot name="left" />
@@ -16,3 +14,14 @@
     </div>
   </div>
 </template>
+<style>
+.slidev-layout.two-cols-header {
+  h1 {
+    @apply mb-4;
+  }
+
+  h1+p {
+    @apply -mt-4 mb-4;
+  }
+}
+</style>

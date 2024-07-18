@@ -17,17 +17,14 @@ Slidev provides two ways of showing code in your presentations.
 
 ::left::
 
-Static code blocks using [Shiki](https://shiki.matsu.io/)
+Static code blocks using [Shiki](https://shiki.matsu.io)
 
 ```ts
 enum LogLevel { Error, Warning, Info, Debug }
 
-/**
- * Equivalent to: 
- * 'Error' | 'Warning' | 'Info' | 'Debug'
- */
 type LogLevelName = keyof typeof LogLevel;
 
+/** Print message if it's important enough */
 function print(key: LogLevelName, message: string) {
   const importance = LogLevel[key];
 
@@ -41,17 +38,14 @@ print("Error", "This is a message");
 
 ::right::
 
-Interactive code blocks using [Monaco](https://microsoft.github.io/monaco-editor/)
+Interactive code blocks using [Monaco](https://microsoft.github.io/monaco-editor)
 
 ```ts {monaco}
 enum LogLevel { Error, Warning, Info, Debug }
 
-/**
- * Equivalent to: 
- * 'Error' | 'Warning' | 'Info' | 'Debug'
- */
 type LogLevelName = keyof typeof LogLevel;
 
+/** Print message if it's important enough */
 function print(key: LogLevelName, message: string) {
   const importance = LogLevel[key];
 
@@ -61,6 +55,178 @@ function print(key: LogLevelName, message: string) {
 }
 
 print("Error", "This is a message");
+```
+
+---
+
+# Shiki TwoSlash
+
+In Shiki code blocks you can use [TwoSlash](https://twoslash.netlify.app) to show type information for JaveScript/TypeScript.
+
+```ts twoslash
+enum LogLevel { Error, Warning, Info, Debug }
+
+type LogLevelName = keyof typeof LogLevel;
+
+/** Print message if it's important enough */
+function print(key: LogLevelName, message: string) {
+  const importance = LogLevel[key];
+
+  if (importance >= LogLevel.Warning) {
+    console.log(`${key}:`, message);
+  }
+}
+
+print("Error", "This is a message");
+print("Oops", "This key is not supported");
+```
+
+---
+
+# Shiki Line Highlighting
+
+You can highlight certain lines in Shiki code blocks. Use `|` to update highlights when clicking.
+
+```ts {1,3|5-12|14-15|all}
+enum LogLevel { Error, Warning, Info, Debug }
+
+type LogLevelName = keyof typeof LogLevel;
+
+/** Print message if it's important enough */
+function print(key: LogLevelName, message: string) {
+  const importance = LogLevel[key];
+
+  if (importance >= LogLevel.Warning) {
+    console.log(`${key}:`, message);
+  }
+}
+
+print("Error", "This is a message");
+print("Oops", "This key is not supported");
+```
+
+---
+
+# Shiki Magic Move
+
+You can create transitions between Shiki code blocks using the Magic Move feature.
+
+````md magic-move
+```js
+function greet(name: string) {
+  console.log(`Hello, ${name}!`);
+}
+
+greet("World");
+```
+```js
+function greet(name: string, language: string) {
+  if (language === "es") {
+    console.log(`Hola, ${name}!`);
+  } else {
+    console.log(`Hello, ${name}!`);
+  }
+}
+
+greet("World");
+greet("Mundo", "es");
+```
+```ts
+function greet(name: string, language: string) {
+  if (language === "es") {
+    console.log(`Hola, ${name}!`);
+  } else if (language = "fr") {
+    console.log(`Bonjour, ${name}!`);
+  } else {
+    console.log(`Hello, ${name}!`);
+  }
+}
+
+greet("World");
+greet("Mundo", "es");
+greet("Monde", "fr");
+```
+```ts
+const greetings = {
+  en: "Hello",
+  es: "Hola",
+  fr: "Bonjour",
+};
+
+type Language = keyof typeof greetings;
+
+function greet(name: string, language: Language) {
+  console.log(`${greetings[language]}, ${name}!`);
+}
+```
+````
+
+---
+
+# Monaco Diff
+
+In Monaco code blocks you can highlight differences between two code snippets.
+
+```ts {monaco-diff} {height: '364px'}
+class Calculator {
+  constructor(public value: number) {}
+
+  add(n: number) {
+    this.value += n;
+    return this;
+  }
+
+  subtract(n: number) {
+    this.value -= n;
+    return this;
+  }
+}
+~~~
+class Calculator {
+  constructor(private value: number) {}
+
+  add(n: number) {
+    this.value += n;
+    return this;
+  }
+
+  subtract(n: number) {
+    this.value -= n;
+    return this;
+  }
+
+  getValue() {
+    return this.value;
+  }
+}
+```
+
+---
+
+# Monaco Runner
+
+You can use Monaco Runner to execute code snippets in Monaco code blocks.
+
+```ts {monaco-run} {autorun:false}
+class Calculator {
+  constructor(private value: number) {}
+
+  add(n: number) {
+    this.value += n;
+    return this;
+  }
+
+  subtract(n: number) {
+    this.value -= n;
+    return this;
+  }
+
+  getValue() {
+    return this.value;
+  }
+}
+
+console.log(new Calculator(10).add(5).subtract(3).getValue());
 ```
 
 ---

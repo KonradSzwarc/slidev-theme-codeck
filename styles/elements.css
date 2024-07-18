@@ -1,0 +1,18 @@
+code,
+kbd,
+samp,
+pre {
+  @apply font-mono;
+}
+
+h1 {
+  @apply text-3xl font-black leading-snug text-title;
+}
+
+h1 + p {
+  @apply text-lg text-subtext1;
+}
+
+a {
+  @apply border-current border-b border-dashed hover:text-blue hover:border-solid;
+}
