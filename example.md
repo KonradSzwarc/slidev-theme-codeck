@@ -289,6 +289,16 @@ paragraph
 
 ---
 
+# Dynamic Highlighting
+
+Slidev integrates [Rough Notation](https://roughnotation.com) to allow dynamic highlights in your slides.
+
+<div class="h-8" />
+
+<span v-mark.blue.circle="0">This text</span> contains <span v-mark.red.box="1">multiple highlights</span> that will be <span v-mark.yellow.underline="2">animated</span> when you <span v-mark.green.bracket="3"> press the <span v-mark.orange.cross="3">left or</span> right arrow</span>.
+
+---
+
 # What is Slidev?
 
 Slidev is a slide maker and presentation tool designed for developers. It includes the following features:

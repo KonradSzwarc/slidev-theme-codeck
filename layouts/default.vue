@@ -10,7 +10,7 @@
   }
 
   h1+p {
-    @apply -mt-4 mb-4;
+    @apply -mt-3 mb-4;
   }
 }
 </style>
