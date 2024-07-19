@@ -3,17 +3,18 @@
     --color-rosewater: 220, 138, 120; /* #dc8a78 */
     --color-flamingo: 221, 120, 120; /* #dd7878 */
     --color-pink: 234, 118, 203; /* #ea76cb */
-    --color-mauve: 136, 57, 239; /* #8839ef */
+    --color-purple: 136, 57, 239; /* #8839ef */
     --color-red: 210, 15, 57; /* #d20f39 */
-    --color-maroon: 230, 69, 83; /* #e64553 */
-    --color-peach: 254, 100, 11; /* #fe640b */
+    --color-rose: 230, 69, 83; /* #e64553 */
+    --color-orange: 254, 100, 11; /* #fe640b */
     --color-yellow: 223, 142, 29; /* #df8e1d */
     --color-green: 64, 160, 43; /* #40a02b */
     --color-teal: 23, 146, 153; /* #179299 */
     --color-sky: 4, 165, 229; /* #04a5e5 */
-    --color-sapphire: 32, 159, 181; /* #209fb5 */
+    --color-cyan: 32, 159, 181; /* #209fb5 */
     --color-blue: 30, 102, 245; /* #1e66f5 */
-    --color-lavender: 114, 135, 253; /* #7287fd */
+    --color-indigo: 114, 135, 253; /* #7287fd */
+
     --color-title: 46, 47, 63; /* #2e2f3f */
     --color-body: 76, 79, 105; /* #4c4f69 */
     --color-subtext1: 92, 95, 119; /* #5c5f77 */
@@ -37,17 +38,18 @@
     --color-rosewater: 245, 224, 220; /* #f5e0dc */
     --color-flamingo: 242, 205, 205; /* #f2cdcd */
     --color-pink: 245, 194, 231; /* #f5c2e7 */
-    --color-mauve: 203, 166, 247; /* #cba6f7 */
+    --color-purple: 203, 166, 247; /* #cba6f7 */
     --color-red: 243, 139, 168; /* #f38ba8 */
-    --color-maroon: 235, 160, 172; /* #eba0ac */
-    --color-peach: 250, 179, 135; /* #fab387 */
+    --color-rose: 235, 160, 172; /* #eba0ac */
+    --color-orange: 250, 179, 135; /* #fab387 */
     --color-yellow: 249, 226, 175; /* #f9e2af */
     --color-green: 166, 227, 161; /* #a6e3a1 */
     --color-teal: 148, 226, 213; /* #94e2d5 */
     --color-sky: 137, 220, 235; /* #89dceb */
-    --color-sapphire: 116, 199, 236; /* #74c7ec */
+    --color-cyan: 116, 199, 236; /* #74c7ec */
     --color-blue: 137, 180, 250; /* #89b4fa */
-    --color-lavender: 180, 190, 254; /* #b4befe */
+    --color-indigo: 180, 190, 254; /* #b4befe */
+
     --color-title: 230, 234, 249; /* #e6eaf9 */
     --color-body: 205, 214, 244; /* #cdd6f4 */
     --color-subtext1: 186, 194, 222; /* #bac2de */
