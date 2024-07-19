@@ -8,6 +8,38 @@ layout: intro
 Custom theme for creating code-related presentations
 
 ---
+
+# What is Slidev?
+
+Slidev is a slide maker and presentation tool designed for developers. It includes the following features:
+
+- 📝 **Text-based** - focus on your content with Markdown, then style it later
+- 🎨 **Themable** - themes can be shared and reused as npm packages
+- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
+- 🤹 **Interactive** - embed Vue components to enhance your expressions
+- 🎥 **Recording** - built-in recording and camera view
+- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
+- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
+
+Read more about [Why Slidev?](https://sli.dev/guide/why){class="mt-auto"}
+
+---
+
+# Navigation
+
+Hover on the bottom-left corner to see the navigation's controls panel
+
+### Keyboard Shortcuts
+
+| Key                                                    | Action                      |
+| ------------------------------------------------------ | --------------------------- |
+| <kbd>space</kbd> / <kbd>tab</kbd> / <kbd>right</kbd>   | next animation or slide     |
+| <kbd>left</kbd>  / <kbd>shift</kbd> + <kbd>space</kbd> | previous animation or slide |
+| <kbd>up</kbd>                                          | previous slide              |
+| <kbd>down</kbd>                                        | next slide                  |
+
+
+---
 layout: two-cols-header
 ---
 
@@ -235,7 +267,7 @@ console.log(new Calculator(10).add(5).subtract(3).getValue());
 
 When writing slides you can access many rich text features provided by Slidev.
 
-<div class="grid grid-cols-5 gap-8 mt-8">
+<div class="rich-text-examples grid grid-cols-5 gap-8 mt-8">
 
 # Heading 1
 
@@ -287,94 +319,22 @@ paragraph
 
 </div>
 
+<style>
+.rich-text-examples * {
+  margin: 0;
+}
+</style>
+
 ---
 
 # Dynamic Highlighting
 
 Slidev integrates [Rough Notation](https://roughnotation.com) to allow dynamic highlights in your slides.
 
-<div class="h-8" />
-
 <span v-mark.blue.circle="0">This text</span> contains <span v-mark.red.box="1">multiple highlights</span> that will be <span v-mark.yellow.underline="2">animated</span> when you <span v-mark.green.bracket="3"> press the <span v-mark.orange.cross="3">left or</span> right arrow</span>.
 
----
-
-# What is Slidev?
-
-Slidev is a slide maker and presentation tool designed for developers. It includes the following features:
-
-- 📝 **Text-based** - focus on your content with Markdown, then style it later
-- 🎨 **Themable** - themes can be shared and reused as npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embed Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
-
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
----
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel
-
-## Keyboard Shortcuts
-
-|                                                      |                             |
-| ---------------------------------------------------- | --------------------------- |
-| <kbd>space</kbd> / <kbd>tab</kbd> / <kbd>right</kbd> | next animation or slide     |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd>  | previous animation or slide |
-| <kbd>up</kbd>                                        | previous slide              |
-| <kbd>down</kbd>                                      | next slide                  |
-
----
-layout: image-right
-image: https://cover.sli.dev
----
-
-# Code
-
-Use code snippets and get the `highlighting` directly!
-
-```ts
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
+<style>
+p:last-of-type {
+  @apply mt-8;
 }
-
-function updateUser(id: number, update: Partial<User>) {
-  const user = getUser(id)
-  const newUser = { ...user, ...update }
-  saveUser(id, newUser)
-}
-```
-
-```ts {monaco}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: Partial<User>) {
-  const user = getUser(id)
-  const newUser = { ...user, ...update }
-  saveUser(id, newUser)
-}
-```
-
----
-layout: center
-class: "text-center"
----
-
-# Learn More
-
-[Documentation](https://sli.dev) / [GitHub Repo](https://github.com/slidevjs/slidev)
+</style>

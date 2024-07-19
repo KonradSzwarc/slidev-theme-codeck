@@ -4,13 +4,13 @@
   </div>
 </template>
 <style>
-.slidev-layout.default {
+:where(.slidev-layout.default) {
   h1 {
-    @apply mb-4;
+    @apply mb-5;
   }
 
   h1+p {
-    @apply -mt-3 mb-4;
+    @apply -mt-4 mb-5;
   }
 }
 </style>

@@ -34,6 +34,10 @@ a {
   @apply border-current border-b border-dashed hover:text-blue hover:border-solid;
 }
 
+:is(p, ul, ol) + :is(p, ul, ol) {
+  @apply mt-[1.5em];
+}
+
 :is(b, strong) {
   @apply font-bold;
 }
@@ -46,20 +50,32 @@ mark {
   @apply bg-yellow px-1 py-px rounded text-white dark:text-black;
 }
 
-ul:not(.contains-task-list) {
-  @apply list-disc;
+ul {
+  @apply list-disc-outside;
+
+  &.contains-task-list {
+    @apply list-none;
+  }
 }
 
 ol {
-  @apply list-decimal;
+  @apply list-decimal-outside;
 }
 
 li {
-  @apply space-y-2;
-}
+  @apply ml-[1em];
 
-li.task-list-item input {
-  @apply size-[1em] relative top-[0.15em] mr-[0.25em];
+  + li {
+    @apply mt-[0.75em];
+  }
+
+  &.task-list-item {
+    @apply ml-0;
+
+    input {
+      @apply size-[1em] relative top-[0.15em] mr-[0.25em];
+    }
+  }
 }
 
 :is(code, kbd, samp, pre) {
@@ -88,13 +104,13 @@ table {
 }
 
 tr {
-  @apply border-b border-main;
+  @apply border-b border-overlay0;
 }
 
 th {
-  @apply text-left font-400;
+  @apply text-left font-bold;
 }
 
 :is(td, th) {
-  @apply p-2 py-3;
+  @apply px-2 py-3;
 }

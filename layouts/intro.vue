@@ -4,7 +4,7 @@
   </div>
 </template>
 <style>
-.slidev-layout.intro {
+:where(.slidev-layout.intro) {
   h1 {
     @apply text-6xl;
   }
