@@ -237,6 +237,20 @@ When writing slides you can access many rich text features provided by Slidev.
 
 <div class="grid grid-cols-5 gap-8 mt-8">
 
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
+
+##### Heading 5
+
+###### Heading 6
+
+paragraph
+
 **bold text**
 
 *italic text*
@@ -247,8 +261,6 @@ When writing slides you can access many rich text features provided by Slidev.
 
 ^super^script
 
-`monospace`
-
 ==highlight==
 
 ==custom highlight=={class="bg-blue"}
@@ -257,9 +269,21 @@ When writing slides you can access many rich text features provided by Slidev.
 
 ++custom underline++{class="decoration-blue decoration-wavy decoration-2 underline-offset-2"}
 
+`monospace`
+
+<kbd>keyboard</kbd>
+
 [link](https://example.com)
 
 ![Image alt text](https://img.shields.io/badge/image-40a02b?style=for-the-badge){class="inline"}
+
+- [ ] task list
+
+1. ordered list
+
+- unordered list
+
+> Blockquote
 
 </div>
 

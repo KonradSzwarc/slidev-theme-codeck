@@ -1,19 +1,16 @@
-:root {
-  &.light {
-    --color-slide: color-mix(in srgb, rgb(var(--color-pane)) 40%, rgb(255, 255, 255));
-  }
-
-  &.dark {
-    --color-slide: color-mix(in srgb, rgb(var(--color-pane)) 70%, rgb(0, 0, 0));
-  }
-}
-
-#slide-content {
-  background-color: var(--color-slide);
-
-  @apply text-body text-base;
-}
-
 .slidev-layout {
-  @apply h-full w-full px-8 py-6;
+  @apply h-full w-full px-8 py-6 text-body text-base;
+
+  background-color: var(--slidev-slide-background);
+
+  :is(.shiki, .slidev-monaco-container) {
+    background-color: var(--slidev-code-block-background);
+  }
+
+  .monaco-editor {
+    --vscode-editor-background: var(--slidev-code-block-background);
+    --vscode-editorGutter-background: var(--slidev-code-block-background);
+
+    @apply outline-none;
+  }
 }
