@@ -3,9 +3,9 @@ theme: ./
 layout: intro
 ---
 
-# Codeck Slidev Theme
+# Welcome to Slidev
 
-Custom theme for creating code-related presentations
+Presentation slides for developers
 
 ---
 
@@ -38,6 +38,14 @@ Hover on the bottom-left corner to see the navigation's controls panel
 | <kbd>up</kbd>                                          | previous slide              |
 | <kbd>down</kbd>                                        | next slide                  |
 
+---
+layout: section
+---
+
+# Features
+
+A showcase of what you can do  
+using Slidev and this theme
 
 ---
 layout: two-cols-header
@@ -338,3 +346,51 @@ p:last-of-type {
   @apply mt-8;
 }
 </style>
+
+---
+layout: section
+---
+
+# Layouts
+
+A showcase of predefined layouts  
+you can use for your slides
+
+---
+layout: intro
+---
+
+::side-badge{class="bg-yellow"}
+intro
+::
+
+# Intro Layout
+
+Use it as the first slide of your presentation
+
+---
+layout: section
+---
+
+::side-badge{class="bg-yellow"}
+section
+::
+
+# Section Layout
+
+Use it to separate sections in your presentation
+
+---
+layout: quote
+bracketClass: 'border-yellow'
+---
+
+::side-badge{class="bg-yellow"}
+quote
+::
+
+„Use this layout to highlight some important quote and provide”
+
+::author::
+
+The Author
