@@ -17,6 +17,16 @@
   "engines": {
     "node": ">=18.0.0"
   },
+  "files": [
+    "components",
+    "layouts",
+    "setup",
+    "styles",
+    "utils",
+    "vite.config.ts",
+    "uno.config.ts",
+    "tsconfig.json"
+  ],
   "scripts": {
     "build": "slidev build example.md",
     "dev": "slidev example.md",
