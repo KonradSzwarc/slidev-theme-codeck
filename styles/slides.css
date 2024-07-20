@@ -1,13 +1,17 @@
 .slidev-layout {
-  @apply h-full w-full px-8 py-6 text-body text-base;
+  @apply h-full w-full px-8 py-6 text-content text-base bg-main;
 
-  background-color: var(--slidev-slide-background);
+  --slidev-code-background: rgb(var(--slidev-theme-code-background));
 
-  :is(.shiki, .slidev-monaco-container) {
-    background-color: var(--slidev-code-background);
+  :is(pre.shiki, .slidev-monaco-container) {
+    @apply bg-code;
   }
 
   .monaco-editor {
     @apply outline-none;
+  }
+
+  .slidev-vclick-hidden {
+    @apply hidden;
   }
 }

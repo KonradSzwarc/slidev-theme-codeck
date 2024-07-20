@@ -329,7 +329,7 @@ paragraph
 
 <style>
 .rich-text-examples * {
-  margin: 0;
+  @apply my-0;
 }
 </style>
 
@@ -360,7 +360,7 @@ you can use for your slides
 layout: intro
 ---
 
-::side-badge{class="bg-yellow"}
+::side-badge
 intro
 ::
 
@@ -372,7 +372,7 @@ Use it as the first slide of your presentation
 layout: section
 ---
 
-::side-badge{class="bg-yellow"}
+::side-badge
 section
 ::
 
@@ -382,10 +382,10 @@ Use it to separate sections in your presentation
 
 ---
 layout: quote
-bracketClass: 'border-yellow'
+bracketClass: 'border-rose'
 ---
 
-::side-badge{class="bg-yellow"}
+::side-badge
 quote
 ::
 

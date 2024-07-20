@@ -1,13 +1,9 @@
-:is(h1, h2, h3, h4, h5, h6) {
-  @apply font-black leading-snug text-title;
-}
-
 h1 {
   @apply text-3xl;
 }
 
 h1 + p {
-  @apply text-lg text-subtext1;
+  @apply text-lg text-heading/75;
 }
 
 h2 {
@@ -30,6 +26,10 @@ h6 {
   @apply text-sm uppercase tracking-wide;
 }
 
+:is(h1, h2, h3, h4, h5, h6) {
+  @apply font-black leading-snug text-heading;
+}
+
 a {
   @apply border-current border-b border-dashed hover:text-blue hover:border-solid;
 }
@@ -47,7 +47,7 @@ a {
 }
 
 mark {
-  @apply bg-yellow px-1 py-px rounded text-invert;
+  @apply bg-yellow px-1 py-px rounded;
 }
 
 ul {
@@ -87,8 +87,8 @@ li {
 }
 
 kbd {
-  @apply border border-b-2 rounded border-overlay0;
-  @apply bg-pane bg-opacity-5 font-medium py-0.5 px-1.5 text-xs;
+  @apply border border-b-2 rounded border-main;
+  @apply bg-code bg-opacity-5 font-medium py-0.5 px-1.5 text-xs;
 }
 
 blockquote {

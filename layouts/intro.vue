@@ -1,13 +1,15 @@
 <template>
   <div class="slidev-layout intro flex flex-col justify-center items-center text-center">
-    <slot />
+    <div class="mx-16">
+      <slot />
+    </div>
   </div>
 </template>
 
 <style>
 :where(.slidev-layout.intro) {
   h1 {
-    @apply text-6xl;
+    @apply text-6xl leading-tight;
   }
 
   h1+p {

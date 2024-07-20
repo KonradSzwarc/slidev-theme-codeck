@@ -13,7 +13,7 @@ const props = defineProps<{
 const { position = 'top-end' } = props;
 
 const rootClass = cn(
-  'fixed bg-overlay2 text-invert/90 px-4 py-1 text-base font-semibold',
+  'fixed bg-indigo-500 text-white px-4 py-1 text-base font-semibold',
   position === 'top-start' && 'top-0 left-0 rounded-br-lg',
   position === 'top-center' && 'top-0 left-1/2 transform -translate-x-1/2 rounded-b-lg',
   position === 'top-end' && 'top-0 right-0 rounded-bl-lg',

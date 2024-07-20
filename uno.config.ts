@@ -11,6 +11,30 @@ import { variantMatcher } from '@unocss/preset-mini/utils';
 import extractorMdc from '@unocss/extractor-mdc';
 
 export default defineConfig({
+  shortcuts: {
+    'bg-main': 'bg-main/100',
+    'bg-code': 'bg-code/100',
+    'text-heading': 'text-heading/100',
+    'text-content': 'text-content/100',
+    'text-caption': 'text-caption/100',
+    'border-main': 'border-main/100',
+  },
+  rules: [
+    [
+      /^bg-(main|code)\/([.\d]+)$/,
+      ([_, type, num]) => ({
+        'background-color': `rgba(var(--slidev-theme-${type}-background), ${Number(num) / 100})`,
+      }),
+    ],
+    [
+      /^text-(heading|content|caption)\/([.\d]+)$/,
+      ([_, type, num]) => ({ color: `rgba(var(--slidev-theme-${type}-text), ${Number(num) / 100})` }),
+    ],
+    [
+      /^border-(main)\/([.\d]+)$/,
+      ([_, type, num]) => ({ 'border-color': `rgba(var(--slidev-theme-${type}-border), ${Number(num) / 100})` }),
+    ],
+  ],
   variants: [
     // `forward:` and `backward:` variant to selectively apply styles based on the direction of the slide
     // For example, `forward:text-red` will only apply to the slides that are navigated forward
@@ -26,50 +50,4 @@ export default defineConfig({
   ],
   transformers: [transformerDirectives({ enforce: 'pre' }), transformerVariantGroup()],
   extractors: [extractorMdc()],
-  extendTheme: (theme) => ({
-    ...theme,
-    colors: {
-      inherit: 'inherit',
-      current: 'currentColor',
-      transparent: 'transparent',
-      black: '#000',
-      white: '#fff',
-      ...Object.fromEntries(
-        getColorKeys().map((key) => [key, `rgba(var(--slidev-theme-color-${key}), <alpha-value>)`]),
-      ),
-    },
-  }),
 });
-
-function getColorKeys() {
-  return [
-    'rosewater',
-    'flamingo',
-    'pink',
-    'purple',
-    'red',
-    'rose',
-    'orange',
-    'yellow',
-    'green',
-    'teal',
-    'sky',
-    'cyan',
-    'blue',
-    'indigo',
-    'title',
-    'body',
-    'subtext1',
-    'subtext0',
-    'invert',
-    'overlay2',
-    'overlay1',
-    'overlay0',
-    'surface2',
-    'surface1',
-    'surface0',
-    'pane',
-    'mantle',
-    'crust',
-  ];
-}
