@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { cn } from '../utils/styles';
 
-
 type Side = 'top' | 'bottom';
 type Placement = 'start' | 'center' | 'end';
 
@@ -21,7 +20,7 @@ const rootClass = cn(
   position === 'bottom-center' && 'bottom-0 left-1/2 transform -translate-x-1/2 rounded-t-lg',
   position === 'bottom-end' && 'bottom-0 right-0 rounded-tl-lg',
   props.class,
-)
+);
 </script>
 
 <template>

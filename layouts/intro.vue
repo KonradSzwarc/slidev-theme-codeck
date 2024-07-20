@@ -12,7 +12,7 @@
     @apply text-6xl leading-tight;
   }
 
-  h1+p {
+  h1 + p {
     @apply mt-4 text-2xl;
   }
 }

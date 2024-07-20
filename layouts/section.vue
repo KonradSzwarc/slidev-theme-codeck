@@ -10,7 +10,7 @@
     @apply text-4xl;
   }
 
-  h1+p {
+  h1 + p {
     @apply mt-3 text-xl;
   }
 }

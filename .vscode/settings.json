@@ -14,11 +14,5 @@
   "workbench.colorTheme": "Catppuccin Mocha",
 
   /** Configure default formatter for different file types. */
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[vue]": {
-    "editor.defaultFormatter": "Vue.volar"
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-  }
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

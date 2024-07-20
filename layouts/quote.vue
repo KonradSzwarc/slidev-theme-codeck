@@ -6,8 +6,7 @@ const props = defineProps<{
   bracketClass?: string;
 }>();
 
-const bracketClass = cn("lt-bracket size-10 border-4 rounded-sm border-main absolute", props.bracketClass);
-
+const bracketClass = cn('lt-bracket size-10 border-4 rounded-sm border-main absolute', props.bracketClass);
 </script>
 
 <template>

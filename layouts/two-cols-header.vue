@@ -23,7 +23,7 @@
     @apply mb-5;
   }
 
-  h1+p {
+  h1 + p {
     @apply -mt-4 mb-5;
   }
 }

@@ -7,9 +7,10 @@ const config = {
   trailingComma: 'all',
   overrides: [
     {
-      files: '*.svg',
+      files: ['example.md'],
       options: {
-        parser: 'html',
+        parser: 'slidev',
+        plugins: ['prettier-plugin-slidev'],
       },
     },
   ],
