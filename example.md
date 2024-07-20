@@ -7,6 +7,12 @@ layout: intro
 
 Presentation slides for developers
 
+<div class="pt-12">
+  <span @click="next" class="px-2 p-1 rounded cursor-pointer hover:bg-white hover:bg-opacity-10">
+    Press Space for next page <carbon:arrow-right class="inline"/>
+  </span>
+</div>
+
 ---
 
 # What is Slidev?
@@ -21,7 +27,10 @@ Slidev is a slide maker and presentation tool designed for developers. It includ
 - 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
 - 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
 
-Read more about [Why Slidev?](https://sli.dev/guide/why){class="mt-auto"}
+<br>
+<br>
+
+Read more about [Why Slidev?](https://sli.dev/guide/why)
 
 ---
 
@@ -29,9 +38,9 @@ Read more about [Why Slidev?](https://sli.dev/guide/why){class="mt-auto"}
 
 Hover on the bottom-left corner to see the navigation's controls panel
 
-### Keyboard Shortcuts
+## Keyboard Shortcuts
 
-| Key                                                    | Action                      |
+|                                                        |                             |
 | ------------------------------------------------------ | --------------------------- |
 | <kbd>space</kbd> / <kbd>tab</kbd> / <kbd>right</kbd>   | next animation or slide     |
 | <kbd>left</kbd>  / <kbd>shift</kbd> + <kbd>space</kbd> | previous animation or slide |

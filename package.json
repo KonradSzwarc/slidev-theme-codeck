@@ -1,6 +1,5 @@
 {
   "name": "slidev-theme-codeck",
-  "description": "Slidev theme for creating code-related presentations.",
   "version": "0.0.0",
   "keywords": [
     "slidev-theme",
@@ -16,8 +15,7 @@
   "author": "Konrad Szwarc <konrad.szwarc.dev@gmail.com> (https://github.com/KonradSzwarc)",
   "type": "module",
   "engines": {
-    "node": ">=20.0.0",
-    "slidev": ">=0.49.0"
+    "node": ">=18.0.0"
   },
   "scripts": {
     "build": "slidev build example.md",
@@ -28,20 +26,32 @@
     "check": "tsc --noEmit"
   },
   "dependencies": {
-    "@slidev/types": "^0.49.16",
-    "clsx": "^2.1.1",
-    "markdown-it-ins": "^4.0.0",
-    "markdown-it-mark": "^4.0.0",
-    "markdown-it-sub": "^2.0.0",
-    "markdown-it-sup": "^2.0.0",
-    "tailwind-merge": "^2.4.0"
+    "clsx": "2.1.1",
+    "markdown-it-ins": "4.0.0",
+    "markdown-it-mark": "4.0.0",
+    "markdown-it-sub": "2.0.0",
+    "markdown-it-sup": "2.0.0",
+    "tailwind-merge": "2.4.0"
   },
   "devDependencies": {
-    "@fontsource-variable/fira-code": "^5.0.18",
-    "@fontsource-variable/inter": "^5.0.19",
-    "@slidev/cli": "^0.49.16",
-    "prettier": "^3.3.3",
-    "typescript": "^5.5.3"
+    "@slidev/types": "0.49.16",
+    "@fontsource-variable/fira-code": "5.0.18",
+    "@fontsource-variable/inter": "5.0.19",
+    "@slidev/cli": "0.49.16",
+    "prettier": "3.3.3",
+    "typescript": "5.5.3"
+  },
+  "peerDependencies": {
+    "@fontsource-variable/fira-code": "5.x",
+    "@fontsource-variable/inter": "5.x"
+  },
+  "peerDependenciesMeta": {
+    "@fontsource-variable/fira-code": {
+      "optional": true
+    },
+    "@fontsource-variable/inter": {
+      "optional": true
+    }
   },
   "slidev": {
     "colorSchema": "both",

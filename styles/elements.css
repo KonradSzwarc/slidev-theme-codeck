@@ -34,7 +34,7 @@ a {
   @apply border-current border-b border-dashed hover:text-blue hover:border-solid;
 }
 
-:is(p, ul, ol) + :is(p, ul, ol) {
+:is(p, ul, ol, pre) + :is(p, ul, ol, pre) {
   @apply mt-[1.5em];
 }
 
