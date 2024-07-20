@@ -3,6 +3,7 @@
     <slot />
   </div>
 </template>
+
 <style>
 :where(.slidev-layout.default) {
   h1 {

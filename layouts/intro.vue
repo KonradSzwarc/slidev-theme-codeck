@@ -3,6 +3,7 @@
     <slot />
   </div>
 </template>
+
 <style>
 :where(.slidev-layout.intro) {
   h1 {
@@ -10,7 +11,7 @@
   }
 
   h1+p {
-    @apply mt-3 text-2xl;
+    @apply mt-4 text-2xl;
   }
 }
 </style>
