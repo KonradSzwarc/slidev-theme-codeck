@@ -4,13 +4,10 @@
   background-color: var(--slidev-slide-background);
 
   :is(.shiki, .slidev-monaco-container) {
-    background-color: var(--slidev-code-block-background);
+    background-color: var(--slidev-code-background);
   }
 
   .monaco-editor {
-    --vscode-editor-background: var(--slidev-code-block-background);
-    --vscode-editorGutter-background: var(--slidev-code-block-background);
-
     @apply outline-none;
   }
 }

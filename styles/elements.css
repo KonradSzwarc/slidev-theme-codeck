@@ -47,7 +47,7 @@ a {
 }
 
 mark {
-  @apply bg-yellow px-1 py-px rounded text-white dark:text-black;
+  @apply bg-yellow px-1 py-px rounded text-invert;
 }
 
 ul {

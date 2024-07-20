@@ -26,19 +26,19 @@ export default defineConfig({
   ],
   transformers: [transformerDirectives({ enforce: 'pre' }), transformerVariantGroup()],
   extractors: [extractorMdc()],
-  extendTheme: (theme) => {
-    return {
-      ...theme,
-      colors: {
-        inherit: 'inherit',
-        current: 'currentColor',
-        transparent: 'transparent',
-        black: '#000',
-        white: '#fff',
-        ...Object.fromEntries(getColorKeys().map((key) => [key, `rgba(var(--color-${key}), <alpha-value>)`])),
-      },
-    };
-  },
+  extendTheme: (theme) => ({
+    ...theme,
+    colors: {
+      inherit: 'inherit',
+      current: 'currentColor',
+      transparent: 'transparent',
+      black: '#000',
+      white: '#fff',
+      ...Object.fromEntries(
+        getColorKeys().map((key) => [key, `rgba(var(--slidev-theme-color-${key}), <alpha-value>)`]),
+      ),
+    },
+  }),
 });
 
 function getColorKeys() {
@@ -61,6 +61,7 @@ function getColorKeys() {
     'body',
     'subtext1',
     'subtext0',
+    'invert',
     'overlay2',
     'overlay1',
     'overlay0',
