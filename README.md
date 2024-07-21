@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/slidev-theme-codeck?color=3AB9D4&label=)](https://www.npmjs.com/package/slidev-theme-codeck)
 
-A (...) theme for [Slidev](https://github.com/slidevjs/slidev).
+A Codeck theme for [Slidev](https://github.com/slidevjs/slidev).
 
 <!--
   Learn more about how to write a theme:
@@ -43,8 +43,15 @@ This theme provides the following components:
 
 ## Contributing
 
-- `npm install`
-- `npm run dev` to start theme preview of `example.md`
+### Environment requirements
+
+- Node.js 20.x
+- pnpm 9.x
+
+### Running locally
+
+- `pnpm install`
+- `pnpm dev` to start theme preview of `example.md`
 - Edit the `example.md` and style to see the changes
-- `npm run export` to generate the preview PDF
-- `npm run screenshot` to generate the preview PNG
+- `pnpm export` to generate the preview PDF
+- `pnpm screenshot` to generate the preview PNG
