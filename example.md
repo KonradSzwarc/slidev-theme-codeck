@@ -1,5 +1,7 @@
 ---
 theme: ./
+addons:
+  - ./slidev-theme-codeck/local-addon
 layout: intro
 ---
 
