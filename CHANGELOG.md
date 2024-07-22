@@ -12,9 +12,9 @@
   - `columns`
   - `grid`
 
-  Add UnoCSS rule to define CSS grid areas
+- Add UnoCSS rule to define CSS grid areas
 
-  Make all layout classes customizable using slide's frontmatter
+- Make all layout classes customizable using slide's frontmatter
 
 ## 0.0.2
 
