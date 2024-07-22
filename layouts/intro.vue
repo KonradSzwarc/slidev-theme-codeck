@@ -1,6 +1,18 @@
+<script setup lang="ts">
+import { cn } from '../utils/styles';
+
+const props = defineProps<{
+  class?: string;
+  classes?: {
+    container?: string;
+  };
+}>();
+const { classes } = props;
+</script>
+
 <template>
-  <div class="slidev-layout intro flex flex-col justify-center items-center text-center">
-    <div class="mx-16">
+  <div :class="cn('slidev-layout intro flex flex-col justify-center items-center text-center', props.class)">
+    <div :class="cn('mx-16', classes?.container)">
       <slot />
     </div>
   </div>

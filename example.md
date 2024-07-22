@@ -57,7 +57,7 @@ A showcase of what you can do
 using Slidev and this theme
 
 ---
-layout: two-cols-header
+layout: header-columns-footer
 ---
 
 # Code Display Modes
@@ -391,7 +391,8 @@ Use it to separate sections in your presentation
 
 ---
 layout: quote
-bracketClass: 'border-rose'
+classes:
+  brackets: 'border-rose'
 ---
 
 ::side-badge
@@ -403,3 +404,156 @@ quote
 ::author::
 
 The Author
+
+---
+layout: header-content-footer
+classes:
+  header: 'bg-indigo/20'
+  content: 'bg-emerald/20'
+  footer: 'bg-rose/20'
+---
+
+::header::
+
+# header
+
+::content::
+
+content
+
+::footer::
+
+footer
+
+::side-badge
+header-content-footer
+::
+
+---
+layout: header-columns-footer
+classes:
+  header: 'bg-indigo/20'
+  col1: 'bg-emerald/20'
+  col2: 'bg-emerald/20'
+  footer: 'bg-rose/20'
+---
+
+::header::
+
+# header
+
+::col1::
+
+col1
+
+::col2::
+
+col2
+
+::footer::
+
+footer
+
+::side-badge
+header-columns-footer
+::
+
+---
+layout: header-grid-footer
+classes:
+  header: 'bg-indigo/20'
+  grid: 'grid-cols-3 grid-rows-2 grid-areas-cell1_cell2_cell2|cell3_cell3_cell4 [&>div]:bg-emerald/20'
+  footer: 'bg-rose/20'
+---
+
+::header::
+
+# header
+
+::cell1::
+
+cell1
+
+::cell2::
+
+cell2
+
+::cell3::
+
+cell3
+
+::cell4::
+
+cell4
+
+::footer::
+
+footer
+
+::side-badge
+header-grid-footer
+::
+
+---
+layout: columns
+classes:
+  col1: 'bg-indigo/20'
+  col2: 'bg-emerald/20'
+  col3: 'bg-rose/20'
+---
+
+::col1::
+
+col1
+
+::col2::
+
+col2
+
+::col3::
+
+col3
+
+::side-badge
+columns
+::
+
+---
+layout: grid
+class: 'grid-rows-3 grid-cols-4 grid-areas-top1_top1_top2_top2|col1_col1_col2_col3|bottom_bottom_bottom_bottom'
+classes:
+  top1: 'bg-indigo/20'
+  top2: 'bg-indigo/20'
+  col1: 'bg-emerald/20'
+  col2: 'bg-emerald/20'
+  col3: 'bg-emerald/20'
+  bottom: 'bg-rose/20'
+---
+
+::top1::
+
+top1
+
+::top2::
+
+top2
+
+::col1::
+
+col1
+
+::col2::
+
+col2
+
+::col3::
+
+col3
+
+::bottom::
+
+bottom
+
+::side-badge
+grid
+::

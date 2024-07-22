@@ -34,6 +34,15 @@ export default defineConfig({
       /^border-(main)\/([.\d]+)$/,
       ([_, type, num]) => ({ 'border-color': `rgba(var(--slidev-theme-${type}-border), ${Number(num) / 100})` }),
     ],
+    [
+      /^grid-areas-([\w|]+)$/,
+      ([, areas = '']) => ({
+        'grid-template-areas': areas
+          .split('|')
+          .map((x) => `"${x.replaceAll('_', ' ')}"`)
+          .join(' '),
+      }),
+    ],
   ],
   variants: [
     // `forward:` and `backward:` variant to selectively apply styles based on the direction of the slide

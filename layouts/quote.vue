@@ -2,24 +2,31 @@
 import { cn } from '../utils/styles';
 
 const props = defineProps<{
-  class?: string;
-  bracketClass?: string;
+  classes?: {
+    container?: string;
+    content?: string;
+    author?: string;
+    brackets?: string;
+    bracketTop?: string;
+    bracketBottom?: string;
+  };
 }>();
+const { classes } = props;
 
-const bracketClass = cn('lt-bracket size-10 border-4 rounded-sm border-main absolute', props.bracketClass);
+const bracketClass = cn('size-10 rounded-sm border-main absolute', classes?.brackets);
 </script>
 
 <template>
   <div :class="cn('slidev-layout quote flex flex-col justify-center items-center text-center', props.class)">
-    <div class="lt-container relative mx-16">
-      <div :class="cn('lt-bracket-top -top-5 -left-10', bracketClass, 'border-r-none border-b-none')" />
-      <div class="lt-content text-2xl leading-normal">
+    <div class="relative mx-16">
+      <div :class="cn('-top-5 -left-10 border-t-4 border-l-4', bracketClass, classes?.bracketTop)" />
+      <div :class="cn('text-2xl leading-normal', classes?.content)">
         <slot />
       </div>
-      <div class="lt-author text-xl font-semibold mt-5">
+      <div :class="cn('text-xl font-semibold mt-5', classes?.author)">
         <slot name="author" />
       </div>
-      <div :class="cn('lt-bracket-bottom -bottom-5 -right-10', bracketClass, 'border-l-none border-t-none')" />
+      <div :class="cn('-bottom-5 -right-10 border-b-4 border-r-4', bracketClass, classes?.bracketBottom)" />
     </div>
   </div>
 </template>
