@@ -15,7 +15,7 @@ const props = defineProps<{
 <style>
 :where(.slidev-layout.section) {
   h1 {
-    @apply text-4xl;
+    @apply text-4xl leading-tight;
   }
 
   h1 + p {

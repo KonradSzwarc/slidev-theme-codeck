@@ -36,6 +36,9 @@ importers:
       '@fontsource-variable/inter':
         specifier: 5.0.19
         version: 5.0.19
+      '@iconify/json':
+        specifier: 2.2.230
+        version: 2.2.230
       '@slidev/cli':
         specifier: 0.49.20
         version: 0.49.20(@babel/parser@7.24.8)(@nuxt/kit@3.12.4(rollup@4.19.0))(@types/markdown-it@14.1.1)(@types/node@20.14.11)(@vue/compiler-sfc@3.4.33)(postcss@8.4.39)(rollup@4.19.0)(vue-template-compiler@2.7.16)
@@ -457,6 +460,9 @@ packages:
 
   '@iconify-json/svg-spinners@1.1.2':
     resolution: {integrity: sha512-Aab6SqkORaTJ1W+ooufn6C8BsBitrn3uk8iRQLPA6pjhyvQAhkKCGMctyXIL5ZjrycnoFVsZ4mx7KnwEMra8qg==}
+
+  '@iconify/json@2.2.230':
+    resolution: {integrity: sha512-SbwqcrYfHMnH7Na3S5RNNUdZvX0cLqgkONVMzI8BOfgVCQSY3tXHyHqeu2VkVoxJX9OcHMmfjeavpno7/y3Mfw==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -3616,6 +3622,11 @@ snapshots:
   '@iconify-json/svg-spinners@1.1.2':
     dependencies:
       '@iconify/types': 2.0.0
+
+  '@iconify/json@2.2.230':
+    dependencies:
+      '@iconify/types': 2.0.0
+      pathe: 1.1.2
 
   '@iconify/types@2.0.0': {}
 
