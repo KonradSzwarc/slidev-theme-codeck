@@ -14,6 +14,7 @@
   "license": "MIT",
   "author": "Konrad Szwarc <konrad.szwarc.dev@gmail.com> (https://github.com/KonradSzwarc)",
   "type": "module",
+  "packageManager": "pnpm@9.6.0",
   "engines": {
     "node": ">=18.0.0"
   },
