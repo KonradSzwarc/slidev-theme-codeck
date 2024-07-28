@@ -29,7 +29,7 @@
     "tsconfig.json"
   ],
   "scripts": {
-    "build": "slidev build example.md",
+    "build": "replace-in-file 'slidev-theme-codeck' \"$(basename \"$(pwd)\")\" example.md  && slidev build example.md",
     "dev": "slidev example.md",
     "export": "slidev export example.md",
     "screenshot": "slidev export example.md --format png",
@@ -55,6 +55,7 @@
     "concurrently": "8.2.2",
     "prettier": "3.3.3",
     "prettier-plugin-slidev": "1.0.5",
+    "replace-in-file": "8.1.0",
     "typescript": "5.5.3"
   },
   "peerDependencies": {
