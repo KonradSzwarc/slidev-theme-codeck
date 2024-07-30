@@ -1,5 +1,11 @@
 # slidev-theme-codeck
 
+## 0.0.4
+
+### Patch Changes
+
+- 566068b: Move Fontsource font imports outside of the theme
+
 ## 0.0.3
 
 ### Patch Changes
