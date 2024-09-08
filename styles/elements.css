@@ -120,7 +120,7 @@ table {
 }
 
 tr {
-  @apply border-b border-overlay0;
+  @apply border-b border-main;
 }
 
 th {
