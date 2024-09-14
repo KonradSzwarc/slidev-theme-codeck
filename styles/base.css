@@ -1,0 +1,109 @@
+/* Default styles for HTML elements. */
+
+:where(.slidev-layout) {
+  a {
+    @apply underline decoration-dotted hover:decoration-solid hover:invert-20;
+  }
+
+  :is(b, strong) {
+    @apply font-bold;
+  }
+
+  :is(i, em) {
+    @apply italic;
+  }
+
+  mark {
+    @apply border bg-accent text-accent outline-accent px-1.5 py-0.5 rounded;
+  }
+
+  :is(ul, ol) {
+    @apply space-y-[0.75em];
+  }
+
+  ul:not(.contains-task-list) {
+    @apply list-disc-outside;
+  }
+
+  ul.contains-task-list {
+    @apply list-none;
+  }
+
+  ol {
+    @apply list-decimal-outside;
+  }
+
+  li:not(.task-list-item) {
+    @apply ml-[1em];
+  }
+
+  li.task-list-item input {
+    @apply size-[1em] relative top-[0.15em] mr-[0.25em];
+  }
+
+  blockquote {
+    @apply bg-code text-code border-code text-sm px-2 py-1 border-l-4 rounded;
+  }
+
+  table {
+    @apply w-full;
+  }
+
+  tr {
+    @apply border-b border-slide;
+  }
+
+  th {
+    @apply text-left font-bold;
+  }
+
+  :is(td, th) {
+    @apply px-2 py-3;
+  }
+
+  :is(h1, h2, h3, h4, h5, h6) {
+    @apply font-header font-black text-primary;
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  h4 {
+    @apply text-lg;
+  }
+
+  h5 {
+    @apply text-base;
+  }
+
+  h6 {
+    @apply text-sm uppercase tracking-wide;
+  }
+
+  :is(pre, code, kbd, samp) {
+    @apply px-1.5 py-0.5 font-mono font-normal text-[0.9em] text-code bg-code border-code;
+  }
+
+  kbd {
+    @apply border rounded border-b-3 mx-px leading-none relative -top-px;
+  }
+}
+
+/* Required to override the default Slidev styles. */
+/* A copy of :is(pre, code, kbd, samp) selector styles. */
+.slidev-layout :not(pre) > code {
+  @apply px-1.5 py-0.5 font-mono font-normal text-[0.9em] text-code bg-code border-code;
+}

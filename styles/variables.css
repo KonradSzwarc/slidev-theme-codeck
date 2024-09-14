@@ -1,0 +1,24 @@
+/* CSS variables used across the project. */
+
+:root {
+  --safe-fonts-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  --safe-fonts-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --safe-fonts-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+  --slidev-theme-font-header: 'Inter Variable', var(--safe-fonts-sans);
+  --slidev-theme-font-body: 'Inter Variable', var(--safe-fonts-sans);
+  --slidev-theme-font-mono: 'Fira Code Variable', var(--safe-fonts-mono);
+
+  --slidev-theme-text-primary: light-dark(theme('colors.slate.900'), theme('colors.white'));
+  --slidev-theme-text-secondary: light-dark(theme('colors.slate.800'), theme('colors.gray.200'));
+  --slidev-theme-text-tertiary: light-dark(theme('colors.slate.500'), theme('colors.gray.400'));
+
+  --slidev-theme-slide-background: light-dark(theme('colors.white'), theme('colors.slate.950'));
+  --slidev-theme-slide-text: var(--slidev-theme-text-secondary);
+  --slidev-theme-slide-border: light-dark(theme('colors.slate.200'), theme('colors.slate.800'));
+
+  --slidev-theme-code-background: light-dark(theme('colors.slate.100'), theme('colors.slate.900'));
+  --slidev-theme-code-text: light-dark(theme('colors.slate.900'), theme('colors.white'));
+  --slidev-theme-code-border: light-dark(theme('colors.slate.300'), theme('colors.slate.700'));
+}

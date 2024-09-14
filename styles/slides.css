@@ -1,14 +1,14 @@
-.slidev-layout {
-  @apply h-full w-full px-8 py-6 text-content text-base bg-main;
+/* Styles for Slidev-related elements. */
 
-  --slidev-code-background: rgb(var(--slidev-theme-code-background));
+:where(.slidev-layout) {
+  /* Used to override Slidev default background for embedded code editors. */
+  /* When changing theme, adjust to match --shiki-* variables. */
+  --slidev-code-background: light-dark(#eff1f5, #1e1e2e);
 
-  :is(pre.shiki, .slidev-monaco-container) {
-    @apply bg-code;
-  }
+  @apply px-10 py-8 h-full text-base font-body text-slide bg-slide accent-scheme-yellow-light;
 
-  .monaco-editor {
-    @apply outline-none;
+  .shiki code {
+    @apply bg-transparent;
   }
 
   .slidev-vclick-hidden {

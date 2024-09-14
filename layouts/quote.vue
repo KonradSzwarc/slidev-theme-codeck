@@ -3,30 +3,59 @@ import { cn } from '../utils/styles';
 
 const props = defineProps<{
   classes?: {
+    root?: string;
     container?: string;
     content?: string;
     author?: string;
-    brackets?: string;
+    bracket?: string;
     bracketTop?: string;
     bracketBottom?: string;
   };
 }>();
 const { classes } = props;
-
-const bracketClass = cn('size-10 rounded-sm border-main absolute', classes?.brackets);
 </script>
 
 <template>
-  <div :class="cn('slidev-layout quote flex flex-col justify-center items-center text-center', props.class)">
-    <div class="relative mx-16">
-      <div :class="cn('-top-5 -left-10 border-t-4 border-l-4', bracketClass, classes?.bracketTop)" />
-      <div :class="cn('text-2xl leading-normal', classes?.content)">
-        <slot />
+  <div :class="cn('slidev-layout quote', classes?.root)">
+    <div :class="cn('container', classes?.container)">
+      <div :class="cn('bracket bracket-top', classes?.bracket, classes?.bracketTop)" />
+      <div :class="cn('content', classes?.content)">
+        <slot name="content" />
       </div>
-      <div :class="cn('text-xl font-semibold mt-5', classes?.author)">
+      <div :class="cn('author', classes?.author)">
         <slot name="author" />
       </div>
-      <div :class="cn('-bottom-5 -right-10 border-b-4 border-r-4', bracketClass, classes?.bracketBottom)" />
+      <div :class="cn('bracket bracket-bottom', classes?.bracket, classes?.bracketBottom)" />
     </div>
   </div>
 </template>
+
+<style>
+div:where(.slidev-layout.quote) {
+  @apply flex flex-col justify-center items-center text-center;
+
+  :where(.container) {
+    @apply relative mx-16;
+  }
+
+  :where(.bracket) {
+    @apply size-10 rounded-sm border-accent absolute;
+  }
+
+  :where(.bracket-top) {
+    @apply -top-5 -left-10 border-t-4 border-l-4;
+  }
+
+  :where(.bracket-bottom) {
+    @apply -bottom-5 -right-10 border-b-4 border-r-4;
+  }
+
+  :where(.content) {
+    @apply text-2xl leading-normal;
+  }
+
+  :where(.author) {
+    @apply text-xl font-semibold mt-5;
+  }
+}
+</style>

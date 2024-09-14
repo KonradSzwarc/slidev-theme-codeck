@@ -8,6 +8,7 @@ const props = defineProps<{
     header?: string;
     title?: string;
     subtitle?: string;
+    author?: string;
     footer?: string;
   };
 }>();
@@ -17,7 +18,7 @@ const slots = useSlots();
 </script>
 
 <template>
-  <div :class="cn('slidev-layout section', classes?.root)">
+  <div :class="cn('slidev-layout cover', classes?.root)">
     <div :class="cn('header', classes?.header)">
       <slot name="header" />
     </div>
@@ -27,6 +28,9 @@ const slots = useSlots();
     <div v-if="slots.subtitle" :class="cn('subtitle', classes?.subtitle)">
       <slot name="subtitle" />
     </div>
+    <div v-if="slots.author" :class="cn('author', classes?.author)">
+      <slot name="author" />
+    </div>
     <div :class="cn('footer ', classes?.footer)">
       <slot name="footer" />
     </div>
@@ -34,7 +38,7 @@ const slots = useSlots();
 </template>
 
 <style>
-div:where(.slidev-layout.section) {
+div:where(.slidev-layout.cover) {
   @apply flex flex-col items-center justify-center h-full text-center;
 
   :where(.header) {
@@ -42,11 +46,15 @@ div:where(.slidev-layout.section) {
   }
 
   :where(.title) {
-    @apply text-3xl leading-tight font-black tracking-wide text-primary;
+    @apply text-5xl leading-tight font-black tracking-wide text-primary;
   }
 
   :where(.subtitle) {
-    @apply text-xl text-secondary mt-2;
+    @apply text-2xl text-secondary mt-2;
+  }
+
+  :where(.author) {
+    @apply text-xl text-tertiary mt-6;
   }
 
   :where(.footer) {

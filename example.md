@@ -2,24 +2,39 @@
 theme: ./
 addons:
   - ./slidev-theme-codeck/local-addon
-layout: intro
 ---
 
-# Welcome to Slidev
+::title::
 
-Presentation slides for developers
+Codeck
 
-<div class="pt-12">
-  <span @click="next" class="px-2 p-1 rounded cursor-pointer hover:bg-white hover:bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
+::subtitle::
+
+Highly customizable [Slidev](https://sli.dev) theme for developers
+
+::author::
+
+Konrad Szwarc
+
+::footer::
+
+<div class="pb-6 ml-4">
+  <span @click="$slidev.nav.next" class="px-3 py-1.5 rounded text-tertiary cursor-pointer hover:text-primary">
+    Press <kbd>space</kbd> or click for next page <lucide:arrow-right />
   </span>
 </div>
 
 ---
 
+::header::
+
 # What is Slidev?
 
-Slidev is a slide maker and presentation tool designed for developers. It includes the following features:
+Slidev is a slide maker and presentation tool designed for developers.
+
+::content::
+
+Slidev includes the following features:{class="pb-3 font-black"}
 
 - 📝 **Text-based** - focus on your content with Markdown, then style it later
 - 🎨 **Themable** - themes can be shared and reused as npm packages
@@ -29,18 +44,21 @@ Slidev is a slide maker and presentation tool designed for developers. It includ
 - 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
 - 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
 
-<br>
-<br>
+::footer::
 
 Read more about [Why Slidev?](https://sli.dev/guide/why)
 
 ---
 
+::header::
+
 # Navigation
 
-Hover on the bottom-left corner to see the navigation's controls panel
+You can hover on the bottom-left corner to see the navigation's controls panel.
 
-## Keyboard Shortcuts
+::content::
+
+For quick slide navigation use the following shortcuts:{class="pt-2"}
 
 |                                                        |                             |
 | ------------------------------------------------------ | --------------------------- |
@@ -53,18 +71,24 @@ Hover on the bottom-left corner to see the navigation's controls panel
 layout: section
 ---
 
-# Features
+::title::
+
+Features
+
+::subtitle::
 
 A showcase of what you can do  
 using Slidev and this theme
 
 ---
-layout: header-columns-footer
+layout: columns
 ---
+
+::header::
 
 # Code Display Modes
 
-Slidev provides two ways of showing code in your presentations.
+There are two ways of showing code in your presentations.
 
 ::left::
 
@@ -110,9 +134,13 @@ print("Error", "This is a message");
 
 ---
 
+::header::
+
 # Shiki TwoSlash
 
 In Shiki code blocks you can use [TwoSlash](https://twoslash.netlify.app) to show type information for JaveScript/TypeScript.
+
+::content::
 
 ```ts twoslash
 enum LogLevel { Error, Warning, Info, Debug }
@@ -134,9 +162,13 @@ print("Oops", "This key is not supported");
 
 ---
 
+::header::
+
 # Shiki Line Highlighting
 
 You can highlight certain lines in Shiki code blocks. Use `|` to update highlights when clicking.
+
+::content::
 
 ```ts {1,3|5-12|14-15|all}
 enum LogLevel { Error, Warning, Info, Debug }
@@ -158,9 +190,13 @@ print("Oops", "This key is not supported");
 
 ---
 
+::header::
+
 # Shiki Magic Move
 
 You can create transitions between Shiki code blocks using the Magic Move feature.
+
+::content::
 
 ````md magic-move
 ```js
@@ -214,9 +250,13 @@ function greet(name: string, language: Language) {
 
 ---
 
+::header::
+
 # Monaco Diff
 
 In Monaco code blocks you can highlight differences between two code snippets.
+
+::content::
 
 ```ts {monaco-diff} {height: '364px'}
 class Calculator {
@@ -254,9 +294,13 @@ class Calculator {
 
 ---
 
+::header::
+
 # Monaco Runner
 
 You can use Monaco Runner to execute code snippets in Monaco code blocks.
+
+::content::
 
 ```ts {monaco-run} {autorun:false}
 class Calculator {
@@ -281,12 +325,18 @@ console.log(new Calculator(10).add(5).subtract(3).getValue());
 ```
 
 ---
+layout: cells
+classes:
+  content: 'cols-5'
+---
+
+::header::
 
 # Rich Text
 
 When writing slides you can access many rich text features provided by Slidev.
 
-<div class="rich-text-examples grid grid-cols-5 gap-8 mt-8">
+::content::
 
 # Heading 1
 
@@ -314,7 +364,7 @@ paragraph
 
 ==highlight==
 
-==custom highlight=={class="bg-blue"}
+==custom highlight=={class="accent-scheme-blue-light"}
 
 ++underline++
 
@@ -336,70 +386,75 @@ paragraph
 
 > Blockquote
 
-</div>
-
-<style>
-.rich-text-examples * {
-  @apply my-0;
-}
-</style>
-
 ---
+classes:
+  content: 'pt-12'
+---
+
+::header::
 
 # Dynamic Highlighting
 
 Slidev integrates [Rough Notation](https://roughnotation.com) to allow dynamic highlights in your slides.
 
-<span v-mark.blue.circle="0">This text</span> contains <span v-mark.red.box="1">multiple highlights</span> that will be <span v-mark.yellow.underline="2">animated</span> when you <span v-mark.green.bracket="3"> press the <span v-mark.orange.cross="3">left or</span> right arrow</span>.
+::content::
 
-<style>
-p:last-of-type {
-  @apply mt-8;
-}
-</style>
+<span v-mark.blue.circle="1">This text</span> contains <span v-mark.red.box="2">multiple highlights</span> that will be <span v-mark.yellow.underline="3">animated</span> when you <span v-mark.green.bracket="4"> press the <span v-mark.orange.cross="4">left or</span> right arrow</span>.
 
 ---
 layout: section
 ---
 
-# Layouts
+::title::
+
+Layouts
+
+::subtitle::
 
 A showcase of predefined layouts  
 you can use for your slides
 
 ---
-layout: intro
+layout: cover
 ---
 
-::side-badge
-intro
-::
+::title::
 
-# Intro Layout
+Cover Layout
+
+::subtitle::
 
 Use it as the first slide of your presentation
+
+::author::
+
+The Author
+
+::side-badge
+cover
+::
 
 ---
 layout: section
 ---
 
+::title::
+
+Section Layout
+
+::subtitle::
+
+Use it to separate sections in your presentation
+
 ::side-badge
 section
 ::
 
-# Section Layout
-
-Use it to separate sections in your presentation
-
 ---
 layout: quote
-classes:
-  brackets: 'border-rose'
 ---
 
-::side-badge
-quote
-::
+::content::
 
 „Use this layout to highlight some important quote and provide”
 
@@ -407,8 +462,12 @@ quote
 
 The Author
 
+::side-badge
+quote
+::
+
 ---
-layout: header-content-footer
+layout: default
 classes:
   header: 'bg-indigo/20'
   content: 'bg-emerald/20'
@@ -428,11 +487,11 @@ content
 footer
 
 ::side-badge
-header-content-footer
+default
 ::
 
 ---
-layout: header-columns-footer
+layout: columns
 classes:
   header: 'bg-indigo/20'
   col1: 'bg-emerald/20'
@@ -457,14 +516,51 @@ col2
 footer
 
 ::side-badge
-header-columns-footer
+columns
 ::
 
 ---
-layout: header-grid-footer
+layout: cells
 classes:
   header: 'bg-indigo/20'
-  grid: 'grid-cols-3 grid-rows-2 grid-areas-cell1_cell2_cell2|cell3_cell3_cell4 [&>div]:bg-emerald/20'
+  content: 'cols-3 [&_*]:bg-emerald/20'
+  footer: 'bg-rose/20'
+---
+
+::header::
+
+# header
+
+::content::
+
+cell1
+
+cell2
+
+cell3
+
+cell4
+
+cell5
+
+cell6
+
+::footer::
+
+footer
+
+::side-badge
+cells
+::
+
+---
+layout: cells
+classes:
+  header: 'bg-indigo/20'
+  content: 'cols-3'
+  cell: 'bg-emerald/20'
+  cell2: 'col-span-2'
+  cell3: 'col-span-2'
   footer: 'bg-rose/20'
 ---
 
@@ -493,69 +589,45 @@ cell4
 footer
 
 ::side-badge
-header-grid-footer
+cells (customized)
 ::
 
 ---
-layout: columns
+layout: cells
 classes:
-  col1: 'bg-indigo/20'
-  col2: 'bg-emerald/20'
-  col3: 'bg-rose/20'
+  header: 'bg-indigo/20'
+  cell: 'bg-emerald/20'
+  footer: 'bg-rose/20'
+areas: [
+  "cell1 cell1 cell2",
+  "cell3 cell4 cell4"
+]
 ---
 
-::col1::
+::header::
 
-col1
+# header
 
-::col2::
+::cell1::
 
-col2
+cell1
 
-::col3::
+::cell2::
 
-col3
+cell2
+
+::cell3::
+
+cell3
+
+::cell4::
+
+cell4
+
+::footer::
+
+footer
 
 ::side-badge
-columns
-::
-
----
-layout: grid
-class: 'grid-rows-3 grid-cols-4 grid-areas-top1_top1_top2_top2|col1_col1_col2_col3|bottom_bottom_bottom_bottom'
-classes:
-  top1: 'bg-indigo/20'
-  top2: 'bg-indigo/20'
-  col1: 'bg-emerald/20'
-  col2: 'bg-emerald/20'
-  col3: 'bg-emerald/20'
-  bottom: 'bg-rose/20'
----
-
-::top1::
-
-top1
-
-::top2::
-
-top2
-
-::col1::
-
-col1
-
-::col2::
-
-col2
-
-::col3::
-
-col3
-
-::bottom::
-
-bottom
-
-::side-badge
-grid
+cells (areas)
 ::
