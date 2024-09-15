@@ -364,7 +364,7 @@ paragraph
 
 ==highlight==
 
-==custom highlight=={class="accent-scheme-blue-light"}
+==custom highlight=={class="color-scheme-blue-light"}
 
 ++underline++
 
@@ -452,6 +452,8 @@ section
 
 ---
 layout: quote
+classes:
+  bracket: 'border-yellow'
 ---
 
 ::content::
@@ -648,25 +650,25 @@ Components
 
 ::content::
 
-<StickyNote v-drag="[80,120,180,180,-12]" class="accent-scheme-cyan-outline">
+<StickyNote v-drag="[80,120,180,180,-12]" color="cyan" scheme="outline">
 
 A **cyan** sticky note using the `outline` accent scheme.
 
 </StickyNote>
 
-<StickyNote v-drag="[290,300,180,180,8]" class="accent-scheme-rose-light">
+<StickyNote v-drag="[290,300,180,180,8]" color="rose" scheme="light">
 
 A **rose** sticky note using the `light` accent scheme.
 
 </StickyNote>
 
-<StickyNote  v-drag="[470,100,180,180,-6]" class="accent-scheme-yellow-filled">
+<StickyNote  v-drag="[470,100,180,180,-6]" color="yellow" scheme="filled">
 
 A **yellow** sticky note using the `filled` accent scheme.
 
 </StickyNote>
 
-<StickyNote  v-drag="[680,280,180,180,10]" class="accent-scheme-emerald-glass">
+<StickyNote  v-drag="[680,280,180,180,10]" color="emerald" scheme="glass">
 
 A **emerald** sticky note using the `glass` accent scheme.
 

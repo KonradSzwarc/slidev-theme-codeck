@@ -14,7 +14,7 @@
   }
 
   mark {
-    @apply border bg-accent text-accent outline-accent px-1.5 py-0.5 rounded;
+    @apply color-scheme-yellow-light border bg-default text-default border-default px-1.5 py-0.5 rounded;
   }
 
   :is(ul, ol) {
@@ -50,7 +50,7 @@
   }
 
   tr {
-    @apply border-b border-slide;
+    @apply border-b line-default;
   }
 
   th {
@@ -62,7 +62,7 @@
   }
 
   :is(h1, h2, h3, h4, h5, h6) {
-    @apply font-header font-black text-primary;
+    @apply font-header font-black text-lighted;
   }
 
   h1 {
@@ -94,10 +94,10 @@
   }
 
   :is(pre, code, kbd, samp) {
-    @apply px-1.5 py-0.5 font-mono font-normal text-[0.9em] text-code bg-code border-code rounded;
+    @apply px-1.5 py-0.5 font-mono font-normal text-[0.9em] text-code bg-code rounded;
   }
 
   kbd {
-    @apply border rounded border-b-3 mx-px leading-none relative -top-px;
+    @apply border border-code rounded border-b-3 mx-px leading-none relative -top-px;
   }
 }

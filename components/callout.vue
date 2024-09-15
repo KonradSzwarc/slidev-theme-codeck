@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import { cn } from '../utils/styles';
 
 const props = defineProps<{
@@ -11,29 +12,35 @@ const props = defineProps<{
     title?: string;
     content?: string;
   };
-  kind: keyof typeof colorSchemes;
+  kind: keyof typeof colors;
+  color?: string;
+  scheme?: string;
 }>();
 
-const colorSchemes = {
-  note: 'accent-scheme-yellow-glass',
-  abstract: 'accent-scheme-cyan-glass',
-  info: 'accent-scheme-sky-glass',
-  todo: 'accent-scheme-teal-glass',
-  tip: 'accent-scheme-emerald-glass',
-  success: 'accent-scheme-green-glass',
-  question: 'accent-scheme-violet-glass',
-  warning: 'accent-scheme-amber-glass',
-  failure: 'accent-scheme-red-glass',
-  danger: 'accent-scheme-rose-glass',
-  example: 'accent-scheme-fuchsia-glass',
-  quote: 'accent-scheme-stone-glass',
+const colors = {
+  note: 'yellow',
+  abstract: 'cyan',
+  info: 'sky',
+  todo: 'teal',
+  tip: 'emerald',
+  success: 'green',
+  question: 'violet',
+  warning: 'amber',
+  failure: 'red',
+  danger: 'rose',
+  example: 'fuchsia',
+  quote: 'stone',
 };
 
-const { classes, title, kind } = props;
+const { classes, title, kind, color = colors[kind], scheme = 'glass' } = props;
+
+const colorScheme = computed(() => {
+  return `color-scheme-${color}-${scheme}`;
+});
 </script>
 
 <template>
-  <div :class="cn('slidev-component callout', colorSchemes[kind], classes?.root, props.class)">
+  <div :class="cn('slidev-component callout', colorScheme, classes?.root, props.class)">
     <div :class="cn('header', classes?.header)">
       <div :class="cn('icon', classes?.icon)">
         <slot name="icon">
@@ -61,11 +68,7 @@ const { classes, title, kind } = props;
 
 <style>
 div:where(.slidev-component.callout) {
-  @apply bg-accent outline-accent text-accent border rounded px-3.5 pt-2 pb-3 grid gap-1;
-
-  :where(code) {
-    @apply bg-code-accent text-code-accent;
-  }
+  @apply bg-default text-default border-default border rounded px-3.5 pt-2 pb-3 grid gap-1;
 
   :where(.header) {
     @apply flex gap-0.5;

@@ -39,7 +39,7 @@ div:where(.slidev-layout.quote) {
   }
 
   :where(.bracket) {
-    @apply size-10 rounded-sm border-accent absolute;
+    @apply size-10 rounded-sm line-default absolute;
   }
 
   :where(.bracket-top) {

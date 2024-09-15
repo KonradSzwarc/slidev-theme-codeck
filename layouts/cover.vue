@@ -46,15 +46,15 @@ div:where(.slidev-layout.cover) {
   }
 
   :where(.title) {
-    @apply text-5xl leading-tight font-black tracking-wide text-primary;
+    @apply text-5xl leading-tight font-black tracking-wide text-lighted;
   }
 
   :where(.subtitle) {
-    @apply text-2xl text-secondary mt-2;
+    @apply text-2xl text-default mt-2;
   }
 
   :where(.author) {
-    @apply text-xl text-tertiary mt-6;
+    @apply text-xl text-dimmed mt-6;
   }
 
   :where(.footer) {

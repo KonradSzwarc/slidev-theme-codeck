@@ -21,24 +21,17 @@ export default defineConfig({
     'font-body': 'font-$slidev-theme-font-body',
     'font-mono': 'font-$slidev-theme-font-mono',
 
-    'text-primary': 'color-$slidev-theme-text-primary',
-    'text-secondary': 'color-$slidev-theme-text-secondary',
-    'text-tertiary': 'color-$slidev-theme-text-tertiary',
+    'bg-default': 'bg-$slidev-theme-color-bg',
+    'text-default': 'color-$slidev-theme-color-text',
+    'line-default': 'border-$slidev-theme-color-line',
+    'border-default': 'border-$slidev-theme-color-border',
 
-    'bg-slide': 'bg-$slidev-theme-slide-background',
-    'text-slide': 'color-$slidev-theme-slide-text',
-    'border-slide': 'border-$slidev-theme-slide-border',
+    'text-lighted': 'color-$slidev-theme-color-text-lighted',
+    'text-dimmed': 'color-$slidev-theme-color-text-dimmed',
 
-    'bg-code': 'bg-$slidev-theme-code-background',
-    'border-code': 'border-$slidev-theme-code-border',
-    'text-code': 'color-$slidev-theme-code-text',
-
-    'bg-accent': 'bg-$slidev-theme-accent-background', // background of the element
-    'text-accent': 'color-$slidev-theme-accent-text', // text color within the element
-    'border-accent': 'border-$slidev-theme-accent-border', // border color within the element
-    'outline-accent': 'border-$slidev-theme-accent-outline', // border color around the element
-    'bg-code-accent': 'bg-$slidev-theme-accent-code-background', // code block background color
-    'text-code-accent': 'color-$slidev-theme-accent-code-text', // code block text color
+    'bg-code': 'bg-$slidev-theme-color-code-bg',
+    'text-code': 'color-$slidev-theme-color-code-text',
+    'border-code': 'border-$slidev-theme-color-code-border',
   },
   rules: [...schemes.rules],
   variants: [
@@ -66,40 +59,48 @@ function generateColorSchemes() {
     .map(([key]) => key) as ColorsWithObjectValues;
 
   for (const color of colorKeys) {
-    addScheme(`accent-scheme-${color}-outline`, {
-      '--slidev-theme-accent-background': `light-dark(${colors[color][100]}, ${colors[color][900]})`,
-      '--slidev-theme-accent-text': `light-dark(${colors[color][600]}, ${colors[color][300]})`,
-      '--slidev-theme-accent-border': `light-dark(${colors[color][400]}, ${colors[color][600]})`,
-      '--slidev-theme-accent-outline': `var(--slidev-theme-accent-border)`,
-      '--slidev-theme-accent-code-background': `light-dark(${colors[color][200]}, ${colors[color][800]})`,
-      '--slidev-theme-accent-code-text': `light-dark(${colors[color][600]}, ${colors[color][400]})`,
+    addScheme(`color-scheme-${color}-outline`, {
+      '--slidev-theme-color-bg': `light-dark(${colors[color][50]}, ${colors[color][950]})`,
+      '--slidev-theme-color-text': `light-dark(${colors[color][500]}, ${colors[color][300]})`,
+      '--slidev-theme-color-text-lighted': `light-dark(${colors[color][600]}, ${colors[color][300]})`,
+      '--slidev-theme-color-text-dimmed': `light-dark(${colors[color][600]}, ${colors[color][300]})`,
+      '--slidev-theme-color-line': `light-dark(${colors[color][400]}, ${colors[color][600]})`,
+      '--slidev-theme-color-border': `var(--slidev-theme-color-line)`,
+      '--slidev-theme-color-code-bg': `light-dark(${colors[color][200]}, ${colors[color][800]})`,
+      '--slidev-theme-color-code-text': `light-dark(${colors[color][600]}, ${colors[color][400]})`,
     });
 
-    addScheme(`accent-scheme-${color}-light`, {
-      '--slidev-theme-accent-background': `light-dark(${colors[color][100]}, ${colors[color][900]})`,
-      '--slidev-theme-accent-text': `light-dark(${colors[color][500]}, ${colors[color][200]})`,
-      '--slidev-theme-accent-border': `light-dark(${colors[color][400]}, ${colors[color][600]})`,
-      '--slidev-theme-accent-outline': `transparent`,
-      '--slidev-theme-accent-code-background': `light-dark(${colors[color][200]}, ${colors[color][800]})`,
-      '--slidev-theme-accent-code-text': `light-dark(${colors[color][600]}, ${colors[color][200]})`,
+    addScheme(`color-scheme-${color}-light`, {
+      '--slidev-theme-color-bg': `light-dark(${colors[color][100]}, ${colors[color][900]})`,
+      '--slidev-theme-color-text': `light-dark(${colors[color][600]}, ${colors[color][200]})`,
+      '--slidev-theme-color-text-lighted': `light-dark(${colors[color][500]}, ${colors[color][200]})`,
+      '--slidev-theme-color-text-dimmed': `light-dark(${colors[color][500]}, ${colors[color][200]})`,
+      '--slidev-theme-color-line': `light-dark(${colors[color][400]}, ${colors[color][600]})`,
+      '--slidev-theme-color-border': `transparent`,
+      '--slidev-theme-color-code-bg': `light-dark(${colors[color][200]}, ${colors[color][800]})`,
+      '--slidev-theme-color-code-text': `light-dark(${colors[color][600]}, ${colors[color][200]})`,
     });
 
-    addScheme(`accent-scheme-${color}-filled`, {
-      '--slidev-theme-accent-background': colors[color][500],
-      '--slidev-theme-accent-text': colors.white,
-      '--slidev-theme-accent-border': colors[color][300],
-      '--slidev-theme-accent-outline': `transparent`,
-      '--slidev-theme-accent-code-background': colors[color][600],
-      '--slidev-theme-accent-code-text': colors[color][50],
+    addScheme(`color-scheme-${color}-filled`, {
+      '--slidev-theme-color-bg': colors[color][500],
+      '--slidev-theme-color-text': colors.white,
+      '--slidev-theme-color-text-lighted': colors.white,
+      '--slidev-theme-color-text-dimmed': colors.white,
+      '--slidev-theme-color-line': colors[color][300],
+      '--slidev-theme-color-border': `transparent`,
+      '--slidev-theme-color-code-bg': colors[color][600],
+      '--slidev-theme-color-code-text': colors[color][50],
     });
 
-    addScheme(`accent-scheme-${color}-glass`, {
-      '--slidev-theme-accent-background': `light-dark(${hsla(colors[color][600], 0.1)}, ${hsla(colors[color][400], 0.1)})`,
-      '--slidev-theme-accent-text': `light-dark(${colors[color][700]}, ${colors[color][300]})`,
-      '--slidev-theme-accent-border': `light-dark(${hsla(colors[color][600], 0.3)}, ${hsla(colors[color][400], 0.3)})`,
-      '--slidev-theme-accent-outline': `var(--slidev-theme-accent-border)`,
-      '--slidev-theme-accent-code-background': `light-dark(${hsla(colors.white, 0.9)}, ${hsla(colors.white, 0.1)})`,
-      '--slidev-theme-accent-code-text': `light-dark(${colors[color][700]}, ${colors[color][200]})`,
+    addScheme(`color-scheme-${color}-glass`, {
+      '--slidev-theme-color-bg': `light-dark(${hsla(colors[color][600], 0.1)}, ${hsla(colors[color][400], 0.1)})`,
+      '--slidev-theme-color-text': `light-dark(${colors[color][700]}, ${colors[color][300]})`,
+      '--slidev-theme-color-text-lighted': `light-dark(${colors[color][700]}, ${colors[color][300]})`,
+      '--slidev-theme-color-text-dimmed': `light-dark(${colors[color][700]}, ${colors[color][300]})`,
+      '--slidev-theme-color-line': `light-dark(${hsla(colors[color][600], 0.3)}, ${hsla(colors[color][400], 0.3)})`,
+      '--slidev-theme-color-border': `var(--slidev-theme-color-line)`,
+      '--slidev-theme-color-code-bg': `light-dark(${hsla(colors.white, 0.9)}, ${hsla(colors.white, 0.1)})`,
+      '--slidev-theme-color-code-text': `light-dark(${colors[color][700]}, ${colors[color][200]})`,
     });
   }
 

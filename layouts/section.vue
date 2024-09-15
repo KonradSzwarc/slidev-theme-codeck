@@ -42,11 +42,11 @@ div:where(.slidev-layout.section) {
   }
 
   :where(.title) {
-    @apply text-3xl leading-tight font-black tracking-wide text-primary;
+    @apply text-3xl leading-tight font-black tracking-wide text-lighted;
   }
 
   :where(.subtitle) {
-    @apply text-xl text-secondary mt-2;
+    @apply text-xl text-default mt-2;
   }
 
   :where(.footer) {
