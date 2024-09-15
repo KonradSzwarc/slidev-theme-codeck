@@ -94,16 +94,10 @@
   }
 
   :is(pre, code, kbd, samp) {
-    @apply px-1.5 py-0.5 font-mono font-normal text-[0.9em] text-code bg-code border-code;
+    @apply px-1.5 py-0.5 font-mono font-normal text-[0.9em] text-code bg-code border-code rounded;
   }
 
   kbd {
     @apply border rounded border-b-3 mx-px leading-none relative -top-px;
   }
-}
-
-/* Required to override the default Slidev styles. */
-/* A copy of :is(pre, code, kbd, samp) selector styles. */
-.slidev-layout :not(pre) > code {
-  @apply px-1.5 py-0.5 font-mono font-normal text-[0.9em] text-code bg-code border-code;
 }

@@ -631,3 +631,127 @@ footer
 ::side-badge
 cells (areas)
 ::
+
+---
+layout: section
+---
+
+::title::
+
+Components
+
+---
+
+::header::
+
+# StickyNote
+
+::content::
+
+<StickyNote v-drag="[80,120,180,180,-12]" class="accent-scheme-cyan-outline">
+
+A **cyan** sticky note using the `outline` accent scheme.
+
+</StickyNote>
+
+<StickyNote v-drag="[290,300,180,180,8]" class="accent-scheme-rose-light">
+
+A **rose** sticky note using the `light` accent scheme.
+
+</StickyNote>
+
+<StickyNote  v-drag="[470,100,180,180,-6]" class="accent-scheme-yellow-filled">
+
+A **yellow** sticky note using the `filled` accent scheme.
+
+</StickyNote>
+
+<StickyNote  v-drag="[680,280,180,180,10]" class="accent-scheme-emerald-glass">
+
+A **emerald** sticky note using the `glass` accent scheme.
+
+</StickyNote>
+
+---
+layout: cells
+classes:
+  content: 'cols-3 gap-3 flex-none'
+---
+
+::header::
+
+# Callout
+
+::content::
+
+<Callout title="Note" kind="note" >
+
+Some example text content of the `note` callout.
+
+</Callout>
+
+<Callout title="Abstract" kind="abstract" >
+
+Some example text content of the `abstract` callout.
+
+</Callout>
+
+<Callout title="Info" kind="info" >
+
+Some example text content of the `info` callout.
+
+</Callout>
+
+<Callout title="Todo" kind="todo" >
+
+Some example text content of the `todo` callout.
+
+</Callout>
+
+<Callout title="Tip" kind="tip" >
+
+Some example text content of the `tip` callout.
+
+</Callout>
+
+<Callout title="Success" kind="success" >
+
+Some example text content of the `success` callout.
+
+</Callout>
+
+<Callout title="Question" kind="question" >
+
+Some example text content of the `question` callout.
+
+</Callout>
+
+<Callout title="Warning" kind="warning" >
+
+Some example text content of the `warning` callout.
+
+</Callout>
+
+<Callout title="Failure" kind="failure" >
+
+Some example text content of the `failure` callout.
+
+</Callout>
+
+<Callout title="Danger" kind="danger" >
+
+Some example text content of the `danger` callout.
+
+</Callout>
+
+<Callout title="Example" kind="example" >
+
+Some example text content of the `example` callout.
+
+</Callout>
+
+<Callout title="Quote" kind="quote" >
+
+Some example text content of the `quote` callout.
+
+</Callout>

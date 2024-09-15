@@ -14,6 +14,10 @@ const props = defineProps<{
 
 <style>
 div:where(.slidev-component.sticky-note) {
-  @apply bg-accent border rounded outline-accent shadow text-accent size-50 p-4;
+  @apply bg-accent outline-accent text-accent border rounded shadow size-45 p-4;
+
+  :where(code) {
+    @apply bg-code-accent text-code-accent;
+  }
 }
 </style>

@@ -4,7 +4,7 @@ import { cn } from '../utils/styles';
 const props = defineProps<{
   classes?: {
     root?: string;
-    container?: string;
+    wrapper?: string;
     content?: string;
     author?: string;
     bracket?: string;
@@ -17,7 +17,7 @@ const { classes } = props;
 
 <template>
   <div :class="cn('slidev-layout quote', classes?.root)">
-    <div :class="cn('container', classes?.container)">
+    <div :class="cn('wrapper', classes?.wrapper)">
       <div :class="cn('bracket bracket-top', classes?.bracket, classes?.bracketTop)" />
       <div :class="cn('content', classes?.content)">
         <slot name="content" />
@@ -34,7 +34,7 @@ const { classes } = props;
 div:where(.slidev-layout.quote) {
   @apply flex flex-col justify-center items-center text-center;
 
-  :where(.container) {
+  :where(.wrapper) {
     @apply relative mx-16;
   }
 

@@ -38,6 +38,8 @@ export default defineConfig({
     'text-accent': 'color-$slidev-theme-accent-text', // text color within the element
     'border-accent': 'border-$slidev-theme-accent-border', // border color within the element
     'outline-accent': 'border-$slidev-theme-accent-outline', // border color around the element
+    'bg-code-accent': 'bg-$slidev-theme-accent-code-background', // code block background color
+    'text-code-accent': 'color-$slidev-theme-accent-code-text', // code block text color
   },
   rules: [...schemes.rules],
   variants: [
@@ -97,24 +99,39 @@ function generateColorSchemes() {
 
   for (const color of colorKeys) {
     addScheme(`accent-scheme-${color}-outline`, ({ colors }) => ({
-      '--slidev-theme-accent-background': `light-dark(hsla(${colors.hsl[color][600]}, 0.1), hsla(${colors.hsl[color][400]}, 0.1))`,
-      '--slidev-theme-accent-text': `light-dark(${colors[color][700]}, ${colors[color][300]})`,
-      '--slidev-theme-accent-border': `light-dark(hsla(${colors.hsl[color][600]}, 0.2), hsla(${colors.hsl[color][400]}, 0.2))`,
+      '--slidev-theme-accent-background': `light-dark(${colors[color][100]}, ${colors[color][900]})`,
+      '--slidev-theme-accent-text': `light-dark(${colors[color][600]}, ${colors[color][400]})`,
+      '--slidev-theme-accent-border': `light-dark(${colors[color][400]}, ${colors[color][600]})`,
       '--slidev-theme-accent-outline': `var(--slidev-theme-accent-border)`,
+      '--slidev-theme-accent-code-background': `light-dark(${colors[color][200]}, ${colors[color][800]})`,
+      '--slidev-theme-accent-code-text': `light-dark(${colors[color][600]}, ${colors[color][400]})`,
     }));
 
     addScheme(`accent-scheme-${color}-light`, ({ colors }) => ({
       '--slidev-theme-accent-background': `light-dark(${colors[color][100]}, ${colors[color][900]})`,
-      '--slidev-theme-accent-text': `light-dark(${colors[color][700]}, ${colors[color][100]})`,
-      '--slidev-theme-accent-border': `light-dark(${colors[color][300]}, ${colors[color][700]})`,
+      '--slidev-theme-accent-text': `light-dark(${colors[color][500]}, ${colors[color][300]})`,
+      '--slidev-theme-accent-border': `light-dark(${colors[color][400]}, ${colors[color][600]})`,
       '--slidev-theme-accent-outline': `transparent`,
+      '--slidev-theme-accent-code-background': `light-dark(${colors[color][200]}, ${colors[color][800]})`,
+      '--slidev-theme-accent-code-text': `light-dark(${colors[color][600]}, ${colors[color][300]})`,
     }));
 
     addScheme(`accent-scheme-${color}-filled`, ({ colors }) => ({
-      '--slidev-theme-accent-background': `light-dark(${colors[color][600]}, ${colors[color][400]})`,
-      '--slidev-theme-accent-text': `light-dark(${colors[color][50]}, ${colors[color][950]})`,
-      '--slidev-theme-accent-border': `light-dark(${colors[color][200]}, ${colors[color][800]})`,
+      '--slidev-theme-accent-background': colors[color][500],
+      '--slidev-theme-accent-text': colors.white,
+      '--slidev-theme-accent-border': colors[color][300],
       '--slidev-theme-accent-outline': `transparent`,
+      '--slidev-theme-accent-code-background': colors[color][600],
+      '--slidev-theme-accent-code-text': colors[color][50],
+    }));
+
+    addScheme(`accent-scheme-${color}-glass`, ({ colors }) => ({
+      '--slidev-theme-accent-background': `light-dark(hsla(${colors.hsl[color][600]}, 0.1), hsla(${colors.hsl[color][400]}, 0.1))`,
+      '--slidev-theme-accent-text': `light-dark(${colors[color][700]}, ${colors[color][300]})`,
+      '--slidev-theme-accent-border': `light-dark(hsla(${colors.hsl[color][600]}, 0.3), hsla(${colors.hsl[color][400]}, 0.3))`,
+      '--slidev-theme-accent-outline': `var(--slidev-theme-accent-border)`,
+      '--slidev-theme-accent-code-background': `light-dark(hsla(0,0%,100%, 0.8), hsla(0,0%,100%, 0.1))`,
+      '--slidev-theme-accent-code-text': `light-dark(${colors[color][700]}, ${colors[color][200]})`,
     }));
   }
 
