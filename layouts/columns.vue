@@ -3,6 +3,7 @@ import { useSlots } from 'vue';
 import { cn } from '../utils/styles';
 
 const props = defineProps({
+  class: String,
   classes: {
     type: Object,
     validator: (obj: object) => Object.values(obj).every((value) => typeof value === 'string'),
@@ -16,7 +17,7 @@ const cols = Object.keys(slots).filter((key) => !['header', 'footer'].includes(k
 </script>
 
 <template>
-  <div :class="cn('slidev-layout columns', classes?.root)">
+  <div :class="cn('slidev-layout columns', classes?.root, props.class)">
     <Header v-if="slots.header" :class="cn('header', classes?.header)">
       <slot name="header" />
     </Header>

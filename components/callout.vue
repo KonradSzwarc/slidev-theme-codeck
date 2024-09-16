@@ -1,21 +1,23 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { cn } from '../utils/styles';
+import { colorSchemeClass } from '../utils/color-scheme';
+import type { WithColorScheme } from '../utils/color-scheme';
 
-const props = defineProps<{
-  title: string;
-  class?: string;
-  classes?: {
-    root?: string;
-    header?: string;
-    icon?: string;
-    title?: string;
-    content?: string;
-  };
-  kind: keyof typeof colors;
-  color?: string;
-  scheme?: string;
-}>();
+const props = defineProps<
+  WithColorScheme<{
+    title: string;
+    class?: string;
+    classes?: {
+      root?: string;
+      header?: string;
+      icon?: string;
+      title?: string;
+      content?: string;
+    };
+    kind: keyof typeof colors;
+  }>
+>();
 
 const colors = {
   note: 'yellow',
@@ -34,9 +36,7 @@ const colors = {
 
 const { classes, title, kind, color = colors[kind], scheme = 'glass' } = props;
 
-const colorScheme = computed(() => {
-  return `color-scheme-${color}-${scheme}`;
-});
+const colorScheme = computed(() => colorSchemeClass({ color, scheme }));
 </script>
 
 <template>

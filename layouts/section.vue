@@ -3,6 +3,7 @@ import { useSlots } from 'vue';
 import { cn } from '../utils/styles';
 
 const props = defineProps<{
+  class?: string;
   classes?: {
     root?: string;
     header?: string;
@@ -17,7 +18,7 @@ const slots = useSlots();
 </script>
 
 <template>
-  <div :class="cn('slidev-layout section', classes?.root)">
+  <div :class="cn('slidev-layout section', classes?.root, props.class)">
     <div :class="cn('header', classes?.header)">
       <slot name="header" />
     </div>

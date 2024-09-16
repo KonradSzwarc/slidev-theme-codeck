@@ -2,6 +2,7 @@
 import { cn } from '../utils/styles';
 
 const props = defineProps<{
+  class?: string;
   classes?: {
     root?: string;
     wrapper?: string;
@@ -16,7 +17,7 @@ const { classes } = props;
 </script>
 
 <template>
-  <div :class="cn('slidev-layout quote', classes?.root)">
+  <div :class="cn('slidev-layout quote', classes?.root, props.class)">
     <div :class="cn('wrapper', classes?.wrapper)">
       <div :class="cn('bracket bracket-top', classes?.bracket, classes?.bracketTop)" />
       <div :class="cn('content', classes?.content)">

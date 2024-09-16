@@ -1,16 +1,18 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { cn } from '../utils/styles';
+import { colorSchemeClass } from '../utils/color-scheme';
+import type { WithColorScheme } from '../utils/color-scheme';
 
-const props = defineProps<{
-  class?: string;
-  color?: string;
-  scheme?: string;
-}>();
+const props = defineProps<
+  WithColorScheme<{
+    class?: string;
+  }>
+>();
 
 const { color = 'yellow', scheme = 'light' } = props;
 
-const colorScheme = computed(() => `color-scheme-${color}-${scheme}`);
+const colorScheme = computed(() => colorSchemeClass({ color, scheme }));
 </script>
 
 <template>

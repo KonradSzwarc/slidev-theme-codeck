@@ -4,6 +4,7 @@ import Header from '../components/header.vue';
 import { cn } from '../utils/styles';
 
 const props = defineProps<{
+  class?: string;
   classes?: {
     root?: string;
     header?: string;
@@ -17,7 +18,7 @@ const slots = useSlots();
 </script>
 
 <template>
-  <div :class="cn('slidev-layout default', classes?.root)">
+  <div :class="cn('slidev-layout default', classes?.root, props.class)">
     <Header v-if="slots.header" :class="cn('header', classes?.header)">
       <slot name="header" />
     </Header>

@@ -1,19 +1,22 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { cn } from '../utils/styles';
+import { colorSchemeClass } from '../utils/color-scheme';
+import type { WithColorScheme } from '../utils/color-scheme';
 
 type Side = 'top' | 'bottom';
 type Placement = 'start' | 'center' | 'end';
 
-const props = defineProps<{
-  position?: `${Side}-${Placement}`;
-  class?: string;
-  color?: string;
-  scheme?: string;
-}>();
+const props = defineProps<
+  WithColorScheme<{
+    position?: `${Side}-${Placement}`;
+    class?: string;
+  }>
+>();
 
 const { position = 'top-end', color = 'blue', scheme = 'outline' } = props;
 
+const colorScheme = computed(() => colorSchemeClass({ color, scheme }));
 const positionClass = computed(() =>
   cn(
     position === 'top-start' && 'top-0 left-0 rounded-br-lg border-t-0 border-l-0',
@@ -24,8 +27,6 @@ const positionClass = computed(() =>
     position === 'bottom-end' && 'bottom-0 right-0 rounded-tl-lg border-b-0 border-r-0',
   ),
 );
-
-const colorScheme = computed(() => `color-scheme-${color}-${scheme}`);
 </script>
 
 <template>

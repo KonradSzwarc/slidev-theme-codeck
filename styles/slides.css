@@ -5,7 +5,7 @@
   /* When changing theme, adjust to match --shiki-* variables. */
   --slidev-code-background: light-dark(#eff1f5, #1e1e2e);
 
-  @apply px-10 py-8 h-full text-base font-body text-default bg-default;
+  @apply px-10 py-8 h-full text-base font-body text-default bg-default color-scheme-default;
 
   .shiki code {
     @apply bg-transparent;
