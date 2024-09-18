@@ -13,7 +13,7 @@ const props = defineProps({
 const { classes } = props;
 const slots = useSlots();
 
-const cols = Object.keys(slots).filter((key) => !['header', 'footer'].includes(key));
+const cols = Object.keys(slots).filter((key) => !['header', 'content', 'footer'].includes(key));
 </script>
 
 <template>
@@ -21,7 +21,8 @@ const cols = Object.keys(slots).filter((key) => !['header', 'footer'].includes(k
     <Header v-if="slots.header" :class="cn('header', classes?.header)">
       <slot name="header" />
     </Header>
-    <div v-if="cols.length" :class="cn('content', classes?.content)">
+    <div v-if="cols.length || slots.content" :class="cn('content', classes?.content)">
+      <slot name="content" />
       <div v-for="col in cols" :key="col" :class="cn('column', classes?.column, classes?.[col])">
         <slot :name="col" />
       </div>
@@ -38,6 +39,10 @@ div:where(.slidev-layout.columns) {
 
   :where(.content) {
     @apply flex-1 flex gap-5;
+
+    > * {
+      @apply flex-1;
+    }
   }
 
   :where(.column) {

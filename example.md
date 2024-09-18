@@ -496,8 +496,36 @@ default
 layout: columns
 classes:
   header: 'bg-indigo/20'
-  col1: 'bg-emerald/20'
-  col2: 'bg-emerald/20'
+  content: '[&_*]:bg-emerald/20'
+  footer: 'bg-rose/20'
+---
+
+::header::
+
+# header
+
+::content::
+
+col1
+
+col2
+
+col3
+
+::footer::
+
+footer
+
+::side-badge
+columns
+::
+
+---
+layout: columns
+classes:
+  header: 'bg-indigo/20'
+  column: 'bg-emerald/20'
+  col2: 'grow-2'
   footer: 'bg-rose/20'
 ---
 
@@ -518,7 +546,7 @@ col2
 footer
 
 ::side-badge
-columns
+columns (customized)
 ::
 
 ---
