@@ -663,6 +663,24 @@ cells (areas)
 ::
 
 ---
+layout: side-title
+---
+
+::title::
+
+# title
+
+Some little longer subtitle.
+
+::content::
+
+The rest of the content for this slide.
+
+::side-badge
+side-title
+::
+
+---
 layout: section
 ---
 
