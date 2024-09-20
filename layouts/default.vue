@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useSlots } from 'vue';
 import Header from '../components/header.vue';
 import { cn } from '../utils/styles';
 
@@ -13,20 +12,18 @@ const props = defineProps<{
   };
 }>();
 const { classes } = props;
-
-const slots = useSlots();
 </script>
 
 <template>
   <div :class="cn('slidev-layout default', classes?.root, props.class)">
-    <Header v-if="slots.header" :class="cn('header', classes?.header)">
+    <Header v-if="$slots.header" :class="cn('header', classes?.header)">
       <slot name="header" />
     </Header>
     <div :class="cn('content', classes?.content)">
       <slot name="content" />
       <slot />
     </div>
-    <div :class="cn('footer', classes?.footer)">
+    <div v-if="$slots.footer" :class="cn('footer', classes?.footer)">
       <slot name="footer" />
     </div>
   </div>
