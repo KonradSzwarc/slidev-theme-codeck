@@ -101,3 +101,8 @@
     @apply border border-code rounded border-b-3 mx-px leading-none relative -top-px;
   }
 }
+
+/* Required to override Slidev default styles */
+.slidev-layout :not(pre) > code {
+  @apply px-1.5 py-0.5 font-mono font-normal text-[0.9em] text-code bg-code rounded;
+}

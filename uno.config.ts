@@ -74,8 +74,8 @@ function generateColorSchemes() {
 
   for (const color of colorKeys) {
     addScheme(`color-scheme-${color}-outline`, {
-      '--slidev-theme-color-bg': `light-dark(${colors[color][50]}, ${colors[color][950]})`,
-      '--slidev-theme-color-text': `light-dark(${colors[color][500]}, ${colors[color][300]})`,
+      '--slidev-theme-color-bg': `light-dark(${colors[color][100]}, ${colors[color][950]})`,
+      '--slidev-theme-color-text': `light-dark(${colors[color][600]}, ${colors[color][300]})`,
       '--slidev-theme-color-line': `light-dark(${colors[color][400]}, ${colors[color][600]})`,
       '--slidev-theme-color-border': `var(--slidev-theme-color-line)`,
 
@@ -121,7 +121,7 @@ function generateColorSchemes() {
       '--slidev-theme-color-text-lighted': `light-dark(${hsla(colors[color][800], 0.9)}, ${hsla(colors[color][200], 0.9)})`,
       '--slidev-theme-color-text-dimmed': `light-dark(${hsla(colors[color][800], 0.7)}, ${hsla(colors[color][200], 0.7)})`,
 
-      '--slidev-theme-color-code-bg': `light-dark(${hsla(colors.white, 0.9)}, ${hsla(colors.white, 0.1)})`,
+      '--slidev-theme-color-code-bg': `light-dark(${hsla(colors.black, 0.06)}, ${hsla(colors.white, 0.1)})`,
       '--slidev-theme-color-code-text': `light-dark(${hsla(colors[color][800], 0.85)}, ${hsla(colors[color][200], 0.85)})`,
     });
   }
