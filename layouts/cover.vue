@@ -46,7 +46,7 @@ div:where(.slidev-layout.cover) {
     @apply mb-auto;
   }
 
-  :where(.title) {
+  :where(.title, .title > h1) {
     @apply text-5xl leading-tight font-black tracking-wide text-lighted;
   }
 

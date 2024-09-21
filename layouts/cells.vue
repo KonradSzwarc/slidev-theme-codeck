@@ -36,9 +36,9 @@ const cells = Object.keys(slots).filter((key) => !['header', 'content', 'footer'
 
 <template>
   <div :class="cn('slidev-layout cells', classes?.root, props.class)">
-    <Header v-if="slots.header" :class="cn('header', classes?.header)">
+    <div v-if="slots.header" :class="cn('header', classes?.header)">
       <slot name="header" />
-    </Header>
+    </div>
     <div v-if="cells.length || slots.content" :class="cn('content', classes?.content)" :style="wrapperStyle">
       <slot name="content" />
       <div
@@ -59,6 +59,10 @@ const cells = Object.keys(slots).filter((key) => !['header', 'content', 'footer'
 <style>
 div:where(.slidev-layout.cells) {
   @apply flex flex-col gap-5;
+
+  :where(.header h1 + p) {
+    @apply mt-1 opacity-80 text-lg;
+  }
 
   :where(.content) {
     @apply flex-1 grid gap-5;

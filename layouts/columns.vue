@@ -18,9 +18,9 @@ const cols = Object.keys(slots).filter((key) => !['header', 'content', 'footer']
 
 <template>
   <div :class="cn('slidev-layout columns', classes?.root, props.class)">
-    <Header v-if="slots.header" :class="cn('header', classes?.header)">
+    <div v-if="slots.header" :class="cn('header', classes?.header)">
       <slot name="header" />
-    </Header>
+    </div>
     <div v-if="cols.length || slots.content" :class="cn('content', classes?.content)">
       <slot name="content" />
       <div v-for="col in cols" :key="col" :class="cn('column', classes?.column, classes?.[col])">
@@ -36,6 +36,10 @@ const cols = Object.keys(slots).filter((key) => !['header', 'content', 'footer']
 <style>
 div:where(.slidev-layout.columns) {
   @apply flex flex-col gap-5;
+
+  :where(.header h1 + p) {
+    @apply mt-1 opacity-80 text-lg;
+  }
 
   :where(.content) {
     @apply flex-1 flex gap-5;

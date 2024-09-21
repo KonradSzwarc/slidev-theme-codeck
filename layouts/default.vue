@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Header from '../components/header.vue';
 import { cn } from '../utils/styles';
 
 const props = defineProps<{
@@ -16,9 +15,9 @@ const { classes } = props;
 
 <template>
   <div :class="cn('slidev-layout default', classes?.root, props.class)">
-    <Header v-if="$slots.header" :class="cn('header', classes?.header)">
+    <div v-if="$slots.header" :class="cn('header', classes?.header)">
       <slot name="header" />
-    </Header>
+    </div>
     <div :class="cn('content', classes?.content)">
       <slot name="content" />
       <slot />
@@ -32,6 +31,10 @@ const { classes } = props;
 <style>
 div:where(.slidev-layout.default) {
   @apply flex flex-col gap-5;
+
+  :where(.header h1 + p) {
+    @apply mt-1 opacity-80 text-lg;
+  }
 
   :where(.content) {
     @apply flex-1;
