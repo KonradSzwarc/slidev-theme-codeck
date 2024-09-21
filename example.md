@@ -493,6 +493,30 @@ default
 ::
 
 ---
+layout: center
+classes:
+  header: 'bg-indigo/20'
+  content: 'bg-emerald/20'
+  footer: 'bg-rose/20'
+---
+
+::header::
+
+# header
+
+::content::
+
+content
+
+::footer::
+
+footer
+
+::side-badge
+center
+::
+
+---
 layout: columns
 classes:
   header: 'bg-indigo/20'
