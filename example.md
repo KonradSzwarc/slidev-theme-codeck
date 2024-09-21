@@ -827,3 +827,25 @@ Some example text content of the `example` callout.
 Some example text content of the `quote` callout.
 
 </Callout>
+
+---
+layout: columns
+classes:
+  column: 'centered-col-3'
+---
+
+::header::
+
+# Image
+
+::col1::
+
+<Image src="https://placehold.co/300x200" />
+
+Image with one source.
+
+::col2::
+
+<Image :src="{ light: 'https://placehold.co/300x200/000/FFF', dark: 'https://placehold.co/300x200/FFF/000' }" />
+
+Separate image for light and dark mode.

@@ -16,23 +16,31 @@ const schemes = generateColorSchemes();
 
 export default defineConfig({
   safelist: ['!opacity-0', 'prose', ...schemes.classes],
-  shortcuts: {
-    'font-header': 'font-$slidev-theme-font-header',
-    'font-body': 'font-$slidev-theme-font-body',
-    'font-mono': 'font-$slidev-theme-font-mono',
+  shortcuts: [
+    {
+      'font-header': 'font-$slidev-theme-font-header',
+      'font-body': 'font-$slidev-theme-font-body',
+      'font-mono': 'font-$slidev-theme-font-mono',
 
-    'bg-default': 'bg-$slidev-theme-color-bg',
-    'text-default': 'color-$slidev-theme-color-text',
-    'line-default': 'border-$slidev-theme-color-line',
-    'border-default': 'border-$slidev-theme-color-border',
+      'bg-default': 'bg-$slidev-theme-color-bg',
+      'text-default': 'color-$slidev-theme-color-text',
+      'line-default': 'border-$slidev-theme-color-line',
+      'border-default': 'border-$slidev-theme-color-border',
 
-    'text-lighted': 'color-$slidev-theme-color-text-lighted',
-    'text-dimmed': 'color-$slidev-theme-color-text-dimmed',
+      'text-lighted': 'color-$slidev-theme-color-text-lighted',
+      'text-dimmed': 'color-$slidev-theme-color-text-dimmed',
 
-    'bg-code': 'bg-$slidev-theme-color-code-bg',
-    'text-code': 'color-$slidev-theme-color-code-text',
-    'border-code': 'border-$slidev-theme-color-code-border',
-  },
+      'bg-code': 'bg-$slidev-theme-color-code-bg',
+      'text-code': 'color-$slidev-theme-color-code-text',
+      'border-code': 'border-$slidev-theme-color-code-border',
+    },
+    {
+      centered: 'flex items-center justify-center',
+      'centered-col': 'flex items-center justify-center flex-col',
+    },
+    [/^centered-(\d+)$/, ([, c]) => `flex items-center justify-center gap-${c}`],
+    [/^centered-col-(\d+)$/, ([, c]) => `flex items-center justify-center gap-${c} flex-col`],
+  ],
   rules: [...schemes.rules],
   variants: [
     // `forward:` and `backward:` variant to selectively apply styles based on the direction of the slide
