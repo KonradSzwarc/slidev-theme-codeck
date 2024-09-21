@@ -61,13 +61,13 @@ function generateColorSchemes() {
   addScheme('color-scheme-default', {
     '--slidev-theme-color-bg': `light-dark(${colors.white}, ${colors.slate[950]})`,
     '--slidev-theme-color-text': `light-dark(${colors.slate[800]}, ${colors.slate[200]})`,
-    '--slidev-theme-color-line': `light-dark(${colors.slate[200]}, ${colors.slate[800]})`,
+    '--slidev-theme-color-line': `light-dark(${colors.slate[300]}, ${colors.slate[700]})`,
     '--slidev-theme-color-border': 'transparent',
 
     '--slidev-theme-color-text-lighted': `light-dark(${colors.slate[900]}, ${colors.white})`,
     '--slidev-theme-color-text-dimmed': `light-dark(${colors.slate[500]}, ${colors.slate[400]})`,
 
-    '--slidev-theme-color-code-bg': `light-dark(${colors.slate[100]}, ${colors.slate[900]})`,
+    '--slidev-theme-color-code-bg': `light-dark(${colors.slate[200]}, ${colors.slate[800]})`,
     '--slidev-theme-color-code-text': `light-dark(${colors.slate[900]}, ${colors.white})`,
     '--slidev-theme-color-code-border': `var(--slidev-theme-color-line)`,
   });
