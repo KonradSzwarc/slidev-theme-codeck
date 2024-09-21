@@ -1,5 +1,17 @@
 # slidev-theme-codeck
 
+## 0.1.0
+
+### Minor Changes
+
+- a981574: Refactor the theming system
+- 3b7be27: Add accent color schemes
+
+### Patch Changes
+
+- d7c9d25: Create Callout component
+- 566068b: Move Fontsource font imports outside of the theme
+
 ## 0.0.3
 
 ### Patch Changes
