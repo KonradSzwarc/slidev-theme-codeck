@@ -33,7 +33,7 @@ const { classes } = props;
 
 <style>
 div:where(.slidev-layout.quote) {
-  @apply flex flex-col justify-center items-center text-center;
+  @apply centered-col text-center;
 
   :where(.wrapper) {
     @apply relative mx-16;
@@ -52,11 +52,11 @@ div:where(.slidev-layout.quote) {
   }
 
   :where(.content) {
-    @apply text-2xl leading-normal;
+    @apply text-2xl leading-normal italic;
   }
 
   :where(.author) {
-    @apply text-xl font-semibold mt-5;
+    @apply text-2xl font-semibold mt-5;
   }
 }
 </style>

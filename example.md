@@ -469,6 +469,22 @@ quote
 ::
 
 ---
+layout: fact
+---
+
+::title::
+
+Some interesting fact
+
+::content::
+
+Sed mollis vulputate libero, vel faucibus dui rhoncus sed. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.
+
+::side-badge
+fact
+::
+
+---
 layout: default
 classes:
   header: 'bg-indigo/20'
