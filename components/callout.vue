@@ -1,23 +1,19 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { cn } from '../utils/styles';
-import { colorSchemeClass } from '../utils/color-scheme';
-import type { WithColorScheme } from '../utils/color-scheme';
 
-const props = defineProps<
-  WithColorScheme<{
-    title: string;
-    class?: string;
-    classes?: {
-      root?: string;
-      header?: string;
-      icon?: string;
-      title?: string;
-      content?: string;
-    };
-    kind: keyof typeof colors;
-  }>
->();
+const props = defineProps<{
+  title: string;
+  class?: string;
+  classes?: {
+    root?: string;
+    header?: string;
+    icon?: string;
+    title?: string;
+    content?: string;
+  };
+  kind: keyof typeof colors;
+}>();
 
 const colors = {
   note: 'yellow',
@@ -34,13 +30,13 @@ const colors = {
   quote: 'stone',
 };
 
-const { classes, title, kind, color = colors[kind], scheme = 'glass' } = props;
+const { classes, title, kind } = props;
 
-const colorScheme = computed(() => colorSchemeClass({ color, scheme }));
+const colorSchemeClass = computed(() => `color-scheme-${colors[kind]}-glass`);
 </script>
 
 <template>
-  <div :class="cn('slidev-component callout', colorScheme, classes?.root, props.class)">
+  <div :class="cn('slidev-component callout', colorSchemeClass, classes?.root, props.class)">
     <div :class="cn('header', classes?.header)">
       <div :class="cn('icon', classes?.icon)">
         <slot name="icon">

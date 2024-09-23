@@ -736,25 +736,25 @@ Components
 
 ::content::
 
-<StickyNote v-drag="[80,120,180,180,-12]" color="cyan" scheme="outline">
+<StickyNote v-drag="[80,120,180,180,-12]" class="color-scheme-cyan-outline">
 
 A **cyan** sticky note using the `outline` accent scheme.
 
 </StickyNote>
 
-<StickyNote v-drag="[290,300,180,180,8]" color="rose" scheme="light">
+<StickyNote v-drag="[290,300,180,180,8]" class="color-scheme-rose-light">
 
 A **rose** sticky note using the `light` accent scheme.
 
 </StickyNote>
 
-<StickyNote  v-drag="[470,100,180,180,-6]" color="yellow" scheme="filled">
+<StickyNote  v-drag="[470,100,180,180,-6]" class="color-scheme-yellow-filled">
 
 A **yellow** sticky note using the `filled` accent scheme.
 
 </StickyNote>
 
-<StickyNote  v-drag="[680,280,180,180,10]" color="emerald" scheme="glass">
+<StickyNote  v-drag="[680,280,180,180,10]" class="color-scheme-emerald-glass">
 
 A **emerald** sticky note using the `glass` accent scheme.
 
@@ -772,7 +772,7 @@ classes:
 
 ::content::
 
-<Callout title="Note" kind="note" >
+<Callout title="Note" kind="note">
 
 Some example text content of the `note` callout.
 

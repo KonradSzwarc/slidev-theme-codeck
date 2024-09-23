@@ -1,28 +1,23 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { colorSchemeClass, type WithColorScheme } from '../utils/color-scheme';
 import { cn } from '../utils/styles';
 
-const props = defineProps<
-  WithColorScheme<{
-    class?: string;
-    classes?: {
-      root?: string;
-      wrapper?: string;
-      icon?: string;
-      title?: string;
-      content?: string;
-    };
-  }>
->();
-const { classes, color = 'cyan', scheme = 'glass' } = props;
+const props = defineProps<{
+  class?: string;
+  classes?: {
+    root?: string;
+    wrapper?: string;
+    icon?: string;
+    title?: string;
+    content?: string;
+  };
+}>();
 
-const colorScheme = computed(() => colorSchemeClass({ color, scheme }));
+const { classes } = props;
 </script>
 
 <template>
   <div :class="cn('slidev-layout fact', classes?.root, props.class)">
-    <div :class="cn('wrapper', colorScheme, classes?.wrapper)">
+    <div :class="cn('wrapper', classes?.wrapper)">
       <div :class="cn('icon', classes?.icon)">
         <slot name="icon">
           <ph:lightbulb-duotone />
@@ -43,7 +38,7 @@ div:where(.slidev-layout.fact) {
   @apply centered;
 
   :where(.wrapper) {
-    @apply w-120 bg-default text-default border-default border-2 border-r-6 border-b-6 rounded-lg p-5 pt-4;
+    @apply w-120 bg-default text-default border-default border-2 border-r-6 border-b-6 rounded-lg p-5 pt-4 color-scheme-cyan-glass;
   }
 
   :where(.icon) {

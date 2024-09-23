@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { colorSchemeClass, type WithColorScheme } from '../utils/color-scheme';
 import { cn } from '../utils/styles';
 
 const props = defineProps<{
@@ -10,18 +9,17 @@ const props = defineProps<{
     title?: string;
     content?: string;
   };
-  title?: WithColorScheme<{
-    side?: 'left' | 'right';
-  }>;
+  side?: 'left' | 'right';
 }>();
-const { classes, title: { side = 'left', color = 'blue', scheme = 'light' } = {} } = props;
 
-const colorScheme = computed(() => colorSchemeClass({ color, scheme }));
+const { classes, side = 'left' } = props;
+
+const sideClass = computed(() => (side === 'left' ? 'flex-row' : 'flex-row-reverse'));
 </script>
 
 <template>
-  <div :data-side="side" :class="cn('slidev-layout side-title', classes?.root, props.class)">
-    <div :class="cn('title', colorScheme, classes?.title)">
+  <div :class="cn('slidev-layout side-title', sideClass, classes?.root, props.class)">
+    <div :class="cn('title', classes?.title)">
       <slot name="title" />
     </div>
     <div :class="cn('content', classes?.content)">
@@ -34,16 +32,8 @@ const colorScheme = computed(() => colorSchemeClass({ color, scheme }));
 div:where(.slidev-layout.side-title) {
   @apply flex pl-0 py-0;
 
-  &:where([data-side='left']) {
-    @apply flex-row;
-  }
-
-  &:where([data-side='right']) {
-    @apply flex-row-reverse;
-  }
-
   :where(.title) {
-    @apply px-10 py-8 w-80 bg-default text-default border-default flex flex-col justify-end;
+    @apply px-10 py-8 w-80 bg-default text-default border-default flex flex-col justify-end color-scheme-blue-light;
   }
 
   :where(.content) {
