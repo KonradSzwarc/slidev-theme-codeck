@@ -1,5 +1,18 @@
 # slidev-theme-codeck
 
+## 0.2.0
+
+### Minor Changes
+
+- 62a75f9: Change the way color schemes are applied to components
+
+### Patch Changes
+
+- b7bf355: Create Image component
+- 895576d: Extend elements configurable using CSS variables
+- 0c11719: Create Center layout component
+- 20b350e: Create Fact layout component
+
 ## 0.1.0
 
 ### Minor Changes
