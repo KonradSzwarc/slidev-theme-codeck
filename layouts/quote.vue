@@ -40,7 +40,7 @@ div:where(.slidev-layout.quote) {
   }
 
   :where(.bracket) {
-    @apply size-10 rounded-sm line-default absolute;
+    @apply size-10 rounded-sm border-line absolute;
   }
 
   :where(.bracket-top) {

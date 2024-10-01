@@ -33,7 +33,7 @@ div:where(.slidev-layout.side-title) {
   @apply flex pl-0 py-0;
 
   :where(.title) {
-    @apply px-10 py-8 w-80 bg-default text-default border-default flex flex-col justify-end color-scheme-blue-light;
+    @apply px-10 py-8 w-80 bg-default text-default border-r-1 border-default flex flex-col justify-end color-scheme-blue-light;
   }
 
   :where(.content) {

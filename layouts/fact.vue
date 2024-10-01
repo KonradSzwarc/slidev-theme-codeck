@@ -38,7 +38,7 @@ div:where(.slidev-layout.fact) {
   @apply centered;
 
   :where(.wrapper) {
-    @apply w-120 bg-default text-default border-default border-2 border-r-6 border-b-6 rounded-lg p-5 pt-4 color-scheme-cyan-glass;
+    @apply w-120 bg-default text-default border-default border-2 border-r-6 border-b-6 rounded-lg p-5 pt-4 color-scheme-slate-glass;
   }
 
   :where(.icon) {

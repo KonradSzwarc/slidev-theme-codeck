@@ -42,7 +42,11 @@
   }
 
   blockquote {
-    @apply bg-code text-code border-code text-sm px-2 py-1 border-l-4 rounded;
+    @apply bg-blockquote text-blockquote border-blockquote text-sm px-2 py-1 border-l-4 rounded;
+  }
+
+  hr {
+    @apply border-line;
   }
 
   table {
@@ -50,7 +54,7 @@
   }
 
   tr {
-    @apply border-b line-default;
+    @apply border-b border-table;
   }
 
   th {
@@ -94,15 +98,19 @@
   }
 
   :is(pre, code, kbd, samp) {
-    @apply px-1.5 py-0.5 font-mono font-normal text-[0.9em] text-code bg-code rounded;
+    @apply px-1.5 py-0.5 font-mono font-normal text-[0.9em] rounded;
+  }
+
+  :is(pre, code, samp) {
+    @apply text-code bg-code;
   }
 
   kbd {
-    @apply border border-code rounded border-b-3 mx-px leading-none relative -top-px;
+    @apply border text-kbd bg-kbd border-kbd rounded border-b-3 mx-px leading-none relative -top-px;
   }
 }
 
 /* Required to override Slidev default styles */
 .slidev-layout :not(pre) > code {
-  @apply px-1.5 py-0.5 font-mono font-normal text-[0.9em] text-code bg-code rounded;
+  @apply px-1.5 py-0.5 font-mono font-normal text-[0.9em] rounded text-code bg-code;
 }

@@ -16,27 +16,25 @@ const props = defineProps<{
 }>();
 
 const colors = {
-  note: 'yellow',
-  abstract: 'cyan',
-  info: 'sky',
-  todo: 'teal',
-  tip: 'emerald',
-  success: 'green',
-  question: 'violet',
-  warning: 'amber',
-  failure: 'red',
-  danger: 'rose',
-  example: 'fuchsia',
-  quote: 'stone',
+  note: 'color-scheme-yellow-glass',
+  abstract: 'color-scheme-cyan-glass',
+  info: 'color-scheme-sky-glass',
+  todo: 'color-scheme-teal-glass',
+  tip: 'color-scheme-emerald-glass',
+  success: 'color-scheme-green-glass',
+  question: 'color-scheme-violet-glass',
+  warning: 'color-scheme-amber-glass',
+  failure: 'color-scheme-red-glass',
+  danger: 'color-scheme-rose-glass',
+  example: 'color-scheme-fuchsia-glass',
+  quote: 'color-scheme-stone-glass',
 };
 
 const { classes, title, kind } = props;
-
-const colorSchemeClass = computed(() => `color-scheme-${colors[kind]}-glass`);
 </script>
 
 <template>
-  <div :class="cn('slidev-component callout', colorSchemeClass, classes?.root, props.class)">
+  <div :class="cn('slidev-component callout', colors[kind], classes?.root, props.class)">
     <div :class="cn('header', classes?.header)">
       <div :class="cn('icon', classes?.icon)">
         <slot name="icon">
